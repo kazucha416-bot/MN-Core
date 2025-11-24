@@ -1,0 +1,29 @@
+imm f"0.1" $lr0v #h=0.1
+imm f"0.05" $lr8v #h/2=0.05
+imm f"1.0" $lr16v #k/m=1.0
+imm f"-1.0" $ls0v #a_0=-1.0
+imm f"0.0" $nowrite
+lpassa $aluf $lm0v #v_0=0.0
+imm f"1.0" $nowrite
+lpassa $aluf $ln0v #x_0=1.0
+nop
+nop
+fvfma $ls0v $lr8v $lm0v $lm0v
+nop
+nop
+fvfma $lm0v $lr0v $ln0v $ln0v
+nop
+nop
+fvmul -$lr16v $ln0v $ls0v
+nop
+fvfma $ls0v $lr8v $lm0v $lm0v   
+
+
+
+
+
+
+d getf $lm0n0c0b0m0p0 4
+d getf $ln0n0c0b0m0p0 4
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4

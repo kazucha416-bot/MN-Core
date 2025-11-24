@@ -1,0 +1,5 @@
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $mauf $lm16v $nowrite
+l1bmm@0 $mauf $lb0

@@ -1,0 +1,2116 @@
+imm f"0.1" $nowrite
+lpassa $aluf $lm0v #h=0.1
+imm f"0" $lr0v #v0=0
+imm f"1.0" $ls0v #x0=1.0
+imm f"0.5" $lr256v #Constant 0.5 for Energy Calc
+imm f"0.9950041" $nowrite
+lpassa $aluf $lm8v #1-kh2/2m+k2h4/24m2=0.9950041
+imm f"0.09983333" $nowrite
+lpassa $aluf $lm16v #1-kh3/6m=0.09983333
+imm f"0.09983333" $nowrite
+lpassa $aluf $lm24v #-(-kh/m+k^2h^3/6m^2)=0.09983333
+nop
+nop
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(1)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(1)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(2)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(2)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb0
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(3)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(3)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(4)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(4)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb4
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(5)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(5)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(6)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(6)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb8
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(7)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(7)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(8)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(8)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb12
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(9)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(9)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(10)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(10)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb16
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(11)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(11)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(12)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(12)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb20
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(13)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(13)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(14)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(14)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb24
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(15)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(15)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(16)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(16)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb28
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(17)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(17)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(18)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(18)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb32
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(19)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(19)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(20)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(20)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb36
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(21)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(21)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(22)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(22)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb40
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(23)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(23)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(24)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(24)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb44
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(25)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(25)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(26)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(26)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb48
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(27)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(27)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(28)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(28)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb52
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(29)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(29)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(30)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(30)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb56
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(31)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(31)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(32)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(32)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb60
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(33)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(33)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(34)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(34)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb64
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(35)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(35)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(36)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(36)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb68
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(37)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(37)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(38)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(38)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb72
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(39)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(39)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(40)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(40)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb76
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(41)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(41)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(42)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(42)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb80
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(43)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(43)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(44)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(44)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb84
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(45)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(45)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(46)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(46)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb88
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(47)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(47)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(48)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(48)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb92
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(49)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(49)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(50)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(50)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb96
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(51)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(51)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(52)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(52)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb100
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(53)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(53)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(54)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(54)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb104
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(55)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(55)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(56)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(56)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb108
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(57)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(57)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(58)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(58)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb112
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(59)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(59)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(60)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(60)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb116
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(61)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(61)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(62)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(62)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb120
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(63)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(63)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(64)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(64)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb124
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(65)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(65)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(66)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(66)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb128
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(67)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(67)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(68)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(68)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb132
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(69)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(69)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(70)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(70)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb136
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(71)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(71)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(72)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(72)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb140
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(73)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(73)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(74)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(74)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb144
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(75)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(75)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(76)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(76)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb148
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(77)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(77)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(78)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(78)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb152
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(79)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(79)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(80)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(80)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb156
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(81)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(81)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(82)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(82)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb160
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(83)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(83)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(84)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(84)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb164
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(85)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(85)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(86)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(86)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb168
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(87)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(87)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(88)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(88)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb172
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(89)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(89)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(90)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(90)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb176
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(91)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(91)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(92)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(92)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb180
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(93)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(93)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(94)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(94)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb184
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(95)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(95)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(96)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(96)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb188
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(97)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(97)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(98)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(98)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb192
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(99)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(99)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(100)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(100)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb196
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(101)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(101)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(102)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(102)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb200
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(103)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(103)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(104)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(104)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb204
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(105)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(105)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(106)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(106)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb208
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(107)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(107)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(108)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(108)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb212
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(109)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(109)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(110)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(110)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb216
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(111)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(111)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(112)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(112)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb220
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(113)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(113)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(114)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(114)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb224
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(115)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(115)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(116)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(116)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb228
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(117)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(117)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(118)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(118)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb232
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(119)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(119)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(120)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(120)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb236
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(121)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(121)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(122)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(122)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb240
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(123)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(123)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(124)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(124)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb244
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(125)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(125)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(126)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(126)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb248
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(127)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(127)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(128)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(128)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb252
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(129)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(129)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(130)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(130)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb256
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(131)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(131)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(132)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(132)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb260
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(133)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(133)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(134)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(134)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb264
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(135)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(135)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(136)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(136)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb268
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(137)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(137)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(138)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(138)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb272
+
+fvmul $ls0v $lm8v $ls8v
+nop
+fvmul $lr0v $lm16v $lr8v
+nop
+fvadd $ls8v $lr8v $ls8v #x(139)
+nop
+fvmul $lr0v $lm8v $lr0v
+nop
+fvmul $ls0v -$lm24v $ls0v
+nop
+fvadd $lr0v $ls0v $lr8v #v(139)
+nop
+fvmul $ls8v $lm8v $ls0v
+nop
+fvmul $lr8v $lm16v $lr0v
+nop
+fvadd $ls0v $lr0v $ls0v #x(140)
+nop
+fvmul $lr8v $lm8v $lr8v
+nop
+fvmul $ls8v -$lm24v $ls8v
+nop
+fvadd $lr8v $ls8v $lr0v #v(140)
+nop
+fvmul $lr0v $lr0v $t
+fvmul $ls0v $ls0v $nowrite
+fvadd $mauf $t $nowrite
+fvmul $mauf $lr256v $nowrite
+l1bmm@0 $mauf $lb276
+
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+d getf $lb0n0c0b0 300

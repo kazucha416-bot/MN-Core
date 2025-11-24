@@ -1,0 +1,8 @@
+imm f"0.1" $nowrite
+lpassa $aluf $lm0v
+nop/2
+l1bmrdfadd $lm0v $lb0
+
+
+d getf $lm0n0c0b0m0p0 16
+d getf $lb0n0c0b0 32

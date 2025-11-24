@@ -1,0 +1,32 @@
+imm f"-1.0" $ls0v #a_0=-1.0
+d set $lm0n0c0b0m0p0 1 0000000000000000 #v0
+d set $ln0n0c0b0m0p0 4 3F8000003F8000003F8000003F8000003F8000003F8000003F8000003F800000 #x0
+imm f"0.01" $lr0v #h=0.1
+imm f"0.005" $lr8v #h/2=0.05
+imm f"1.0" $lr16v #k/m=1.0
+imm f"0.5" $ls8v #エネルギー用の0.5
+
+fvfma $ls0v $lr8v $lm0v $t  # a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(1) #v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(1) #-k/m*x1=a1
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(1) #a1*h/2+v0.5=v1
+
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+fvpassa $mauf $lm8v
+
+
+
+
+
+d getf $lm0n0c0b0m0p0 12
+d getf $ln0n0c0b0m0p0 12
+d getf $lr0n0c0b0m0p0 12
+d getf $ls0n0c0b0m0p0 12
+d getf $tn0c0b0m0p0 8

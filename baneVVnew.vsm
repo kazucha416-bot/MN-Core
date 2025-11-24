@@ -1,0 +1,993 @@
+imm f"-1.0" $ls0v #a0=-1.0
+d set $lm0n0c0b0m0p0 1 0000000000000000 #v0
+d set $ln0n0c0b0m0p0 4 3F8000003F8000003F8000003F8000003F8000003F8000003F8000003F800000 #x0n
+imm f"0.1" $lr0v #h=0.01
+imm f"0.05" $lr8v #h/2=0.005
+imm f"1.0" $lr16v #k/m=1.0
+imm f"0.5" $ls8v #エネルギーのための0.5
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(1) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(1) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(1) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb4
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(2) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(2) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(2) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb8
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(3) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(3) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(3) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb12
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(4) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(4) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(4) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb16
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(5) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(5) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(5) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb20
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(6) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(6) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(6) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb24
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(7) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(7) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(7) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb28
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(8) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(8) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(8) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb32
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(9) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(9) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(9) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb36
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(10) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(10) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(10) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb40
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(11) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(11) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(11) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb44
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(12) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(12) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(12) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb48
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(13) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(13) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(13) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb52
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(14) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(14) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(14) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb56
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(15) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(15) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(15) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb60
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(16) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(16) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(16) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb64
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(17) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(17) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(17) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb68
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(18) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(18) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(18) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb72
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(19) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(19) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(19) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb76
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(20) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(20) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(20) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb80
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(21) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(21) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(21) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb84
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(22) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(22) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(22) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb88
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(23) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(23) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(23) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb92
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(24) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(24) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(24) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb96
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(25) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(25) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(25) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb100
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(26) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(26) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(26) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb104
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(27) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(27) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(27) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb108
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(28) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(28) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(28) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb112
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(29) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(29) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(29) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb116
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(30) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(30) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(30) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb120
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(31) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(31) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(31) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb124
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(32) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(32) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(32) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb128
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(33) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(33) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(33) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb132
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(34) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(34) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(34) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb136
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(35) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(35) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(35) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb140
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(36) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(36) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(36) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb144
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(37) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(37) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(37) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb148
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(38) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(38) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(38) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb152
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(39) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(39) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(39) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb156
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(40) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(40) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(40) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb160
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(41) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(41) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(41) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb164
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(42) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(42) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(42) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb168
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(43) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(43) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(43) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb172
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(44) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(44) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(44) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb176
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(45) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(45) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(45) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb180
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(46) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(46) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(46) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb184
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(47) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(47) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(47) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb188
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(48) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(48) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(48) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb192
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(49) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(49) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(49) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb196
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(50) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(50) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(50) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb200
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(51) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(51) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(51) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb204
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(52) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(52) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(52) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb208
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(53) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(53) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(53) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb212
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(54) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(54) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(54) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb216
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(55) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(55) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(55) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb220
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(56) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(56) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(56) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb224
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(57) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(57) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(57) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb228
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(58) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(58) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(58) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb232
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(59) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(59) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(59) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb236
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(60) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(60) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(60) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb240
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(61) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(61) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(61) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb244
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(62) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(62) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(62) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb248
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(63) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(63) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(63) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb252
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(64) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(64) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(64) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb256
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(65) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(65) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(65) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb260
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(66) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(66) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(66) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb264
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(67) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(67) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(67) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb268
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(68) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(68) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(68) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb272
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(69) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(69) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(69) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb276
+fvfma $ls0v $lr8v $lm0v $t #a0*h/2+v0=v0.5
+nop
+fvfma $t $lr0v $ln0v $ln0v #x(70) v0.5*h+x0=x1
+nop/2
+fvmul -$lr16v $ln0v $ls0v #a(70) -k/m*x1=a
+nop
+fvfma $ls0v $lr8v $t $lm0v #v(70) a1*h/2+v0.5=v1
+nop
+fvmul $ln0v $ln0v $lr24v
+nop
+fvmul $lm0v $lm0v $nowrite
+fvadd $lr24v $mauf $nowrite
+fvmul $mauf $ls8v $nowrite
+l1bmm@0 $mauf $lb280
+d getf $lm0n0c0b0m0p0 12
+d getf $ln0n0c0b0m0p0 12
+d getf $lr0n0c0b0m0p0 12
+d getf $ls0n0c0b0m0p0 12
+d getf $tn0c0b0m0p0 12
+d getf $lb0n0c0b0 300

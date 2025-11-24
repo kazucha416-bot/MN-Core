@@ -1,0 +1,100 @@
+#２次のルンゲクッタ
+d set $lm0n0c0b0m0p0 1 3f8000003f800000
+d set $ln0n0c0b0m0p0 1 0000000000000000
+d set $ls0n0c0b0m0p0 4 3f8000003f8000003dcccccd3dcccccd3d4ccccd3d4ccccd3f0000003f000000
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb0
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb4
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb8
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb12
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb16
+
+fvmul -$ls0 $lm0 $nowrite
+fvfma $mauf $ls4 $ln0 $lr2
+fvfma $ln0 $ls4 $lm0 $nowrite
+fvmul $mauf -$ls0 $lr4
+fvfma $lr2 $ls2 $lm0 $lm0
+nop
+fvfma $lr4 $ls2 $ln0 $ln0
+nop
+fvmul $lm0 $lm0 $lr0
+nop
+fvmul $ln0 $ln0 $nowrite
+fvadd $lr0 $mauf $nowrite
+fvmul $ls6 $mauf $nowrite
+l1bmm@0 $mauf $lb20
+
+d getf $lm0n0c0b0m0p0 1
+d getf $ln0n0c0b0m0p0 1
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+d getf $lb0n0c0b0 300

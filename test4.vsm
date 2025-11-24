@@ -1,0 +1,15 @@
+#rの部分
+imm f"2.0" $t
+
+fvmul $lm0v $lm0v $lr8v  # r2 = pos * pos; // 1Dの距離の2乗
+nop/2
+frsqrt $lr8v $lr8v
+nop/2
+fvfma -$lm0v $mauf $t $nowrite
+nop/2
+fvmul $lr8v $mauf $lr8v
+nop/2
+fvmul $lr8v $lr8v $nowrite
+nop/2
+fvpassa $mauf $lr8v #lr8vにr2iが入った
+
