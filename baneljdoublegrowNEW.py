@@ -15,7 +15,8 @@ def main():
 
     with open(filepath, "w") as f:
         # --- 1. 初期化ブロック (共通) ---
-        f.write("""d set $lm0n0c0b0m0p0 5 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff0000000000000
+        f.write("""
+d set $lm0n0c0b0m0p0 5 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff0000000000000
 d set $ln0n0c0b0m0p0 2 00000000000000003eb0c6f7a0b5ed8d
 d set $ls18n0c0b0m0p0 1 3fe0000000000000
 d set $lr20n0c0b0m0p0 1 4010000000000000

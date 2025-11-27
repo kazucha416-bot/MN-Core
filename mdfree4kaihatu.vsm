@@ -1,0 +1,47 @@
+# 速度の初期配置ひとつのPEに１粒子を配置
+# 粒子０の速度
+d set $ln0n0c0b0m0p0 4 3ff6fedb5036cee63fe24036f78584993fe0e0f20483e1ec0000000000000000
+# 粒子１の速度
+d set $ln0n0c0b0m0p1 4 bff184309c1ae6de3fd4bcc1f976fb67bff16a66c8d8744c0000000000000000
+# 粒子２の速度
+d set $ln0n0c0b0m0p2 4 bfb07ff40a6985753ff36463a89d1838bfd3db7140fb17bc0000000000000000
+# 粒子３の速度
+d set $ln0n0c0b0m0p3 4 bfd1caadcdd53ec0c000d9d7d15eccaf3febe1942daa928b0000000000000000
+
+# 位置の初期配置
+# 粒子0
+d set $lm0n0c0b0m0p0 4 0000000000000000000000000000000000000000000000000000000000000000
+# 粒子1
+d set $lm0n0c0b0m0p1 4 00000000000000003ff00000000000003ff00000000000000000000000000000
+# 粒子2
+d set $lm0n0c0b0m0p2 4 3ff00000000000003ff000000000000000000000000000000000000000000000
+# 粒子3
+d set $lm0n0c0b0m0p3 4 3ff000000000000000000000000000003ff00000000000000000000000000000
+
+# [mslとやらを使って相互作用を計算する]
+# まず元の座標を逃がす→元の座標逃がさないで，回転させた座標をls0vに格納すればいいじゃないか．
+dvpassa $lm0v $ls0v
+# 座標を時計回りに回転させてlm0vに格納．元の値は消える．
+msl $lm0v $lm0v
+nop/2
+# 元の座標 - 回転させた座標 = lr0vに格納
+dvadd $ls0v -$lm0v $lr0v
+# lm0vの座標をもうひと回転
+msl $lm0v $lm0v
+nop/2
+# 元の座標 - 2回転させた座標 = lr8vに格納
+dvadd $ls0v -$lm0v $lr8v
+
+# lrに格納された距離の差6ペアを二乗してr2を求める．SDMの3.6.9.11参照．
+dvmulu $lr0v $lr0v $nowrite
+dvfmad $lr0v $lr0v $mauf $lr16v
+dvmulu $lr8v $lr8v $nowrite
+dvfmad $lr8v $lr8v $mauf $lr24v
+
+
+
+
+d getd $lm0n0c0b0m0 4
+d getd $ln0n0c0b0m0 4
+d getd $lr0n0c0b0m0 16
+d getd $ls0n0c0b0m0 8

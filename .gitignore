@@ -1,3 +1,8 @@
 *.dmp
 *.tar.gz
 my_env/
+*.asm
+*.dmp
+*.asm
+*.asm
+*.dmp
