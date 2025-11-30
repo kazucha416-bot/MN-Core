@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MN-Core: Assemble & Run (Current File)",
+            "type": "shell",
+            // ${fileBasenameNoExtension} は "mdfree4kaihatu.vsm" なら "mdfree4kaihatu" に置き換わります
+            "command": "assemble3 ${fileBasename} > ${fileBasenameNoExtension}.asm && gpfn3_package_main -i ${fileBasenameNoExtension}.asm -d ${fileBasenameNoExtension}.dmp",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
