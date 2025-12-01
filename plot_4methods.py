@@ -52,7 +52,7 @@ for config in files_config:
 
 # ★修正2: 文字サイズをさらに大きく
 ax.set_xlabel('Time', fontsize=28)
-ax.set_ylabel('Total Energy', fontsize=28)
+ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
 
 # 目盛りの数字
 ax.tick_params(axis='both', labelsize=22)
