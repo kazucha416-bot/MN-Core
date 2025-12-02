@@ -701,5 +701,15 @@ fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb276
-d getf $lb0n0c0b0 280
+fvmul -$lm8v $ls0v $nowrite
+fvfma $mauf $lm0v $lr0v $lr0v #v(71)
+nop
+fvfma $lr0v $lm0v $ls0v $ls0v #x(71)
+nop
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb280
+d getf $lb0n0c0b0 284
 d getf $lm0n0c0b0m0p0 16

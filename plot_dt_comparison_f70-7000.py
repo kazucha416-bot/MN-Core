@@ -5,9 +5,9 @@ import numpy as np
 # --- 設定 ---
 files_config = [
     # { 'filename': 'ファイル名', 'dt': 時間刻み幅, 'label': '凡例ラベル' }
-    {'filename': 'result_f70.txt',   'dt': 0.1,   'label': 'dt=0.1 (70 steps)'},
-    {'filename': 'result_f700.txt',  'dt': 0.01,  'label': 'dt=0.01 (700 steps)'},
-    {'filename': 'result_f7000.txt', 'dt': 0.001, 'label': 'dt=0.001 (7000 steps)'},
+    {'filename': 'resultnew_f70.txt',   'dt': 0.1,   'label': 'dt=0.1 s'},
+    {'filename': 'result_f700.txt',  'dt': 0.01,  'label': 'dt=0.01 s'},
+    {'filename': 'result_f7000.txt', 'dt': 0.001, 'label': 'dt=0.001 s'},
 ]
 
 output_image = 'energy_comparison_dt_final.png'
@@ -48,7 +48,7 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 # ★修正2: 文字サイズを超特大に
-ax.set_xlabel('Time', fontsize=28)
+ax.set_xlabel('Time (s)', fontsize=28)
 ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
 
 # 目盛りの数字
@@ -58,7 +58,7 @@ ax.tick_params(axis='both', labelsize=22)
 ax.grid(True, which='both', linestyle='--', alpha=0.7)
 
 # ★修正3: 凡例の枠を消す & 文字大きく
-ax.legend(fontsize=18, loc='best', frameon=False)
+ax.legend(fontsize=16,loc='upper right', frameon=False)
 
 # --- 保存 ---
 plt.savefig(output_image)

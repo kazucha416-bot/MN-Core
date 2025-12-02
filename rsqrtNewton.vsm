@@ -1,0 +1,21 @@
+d set $lm0n0c0b0m0p0 2 3ff4cccccccccccd3fe0000000000000
+d set $ln0n0c0b0m0p0 1 3ff8000000000000
+
+drsqrt $lm0 $lr0
+nop/2
+# 1週目
+dvmulu $lr0 $lr0 $nowrite
+dvmulu $lm0 $mauf $nowrite
+dvfmau $lm2 -$mauf $ln0 $nowrite
+dvmulu $mauf $lr0 $ls0
+# 2週目
+nop/2
+dvmulu $ls0 $ls0 $nowrite
+dvmulu $lm0 $mauf $nowrite
+dvfmau $lm2 -$mauf $ln0 $nowrite
+dvmulu $mauf $ls0 $ls2
+
+d getd $lm0n0c0b0m0p0 2
+d getd $ln0n0c0b0m0p0 1
+d getd $lr0n0c0b0m0p0 1
+d getd $ls0n0c0b0m0p0 2

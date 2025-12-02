@@ -5,7 +5,7 @@ import numpy as np
 # --- 設定 ---
 files_config = [
     {"file": "result_Euler70.txt", "label": "Euler",           "color": "tab:blue",   "style": "--"},
-    {"file": "resultVV70.txt",     "label": "Velocity Verlet", "color": "tab:green",  "style": "-"},
+    {"file": "resultVV70.txt",     "label": "VV", "color": "tab:green",  "style": "-"},
     {"file": "result_RK270.txt",   "label": "RK2",             "color": "tab:orange", "style": "-."},
     {"file": "result_RK470.txt",   "label": "RK4",             "color": "tab:red",    "style": ":"},
 ]
@@ -51,7 +51,7 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 # ★修正2: 文字サイズをさらに大きく
-ax.set_xlabel('Time', fontsize=28)
+ax.set_xlabel('Time (s)', fontsize=28)
 ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
 
 # 目盛りの数字

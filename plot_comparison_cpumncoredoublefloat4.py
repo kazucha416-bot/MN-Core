@@ -81,15 +81,15 @@ try:
     ax.plot(time_axis, totalE_B, label='CPU (Float)', linestyle=':', linewidth=3.0, color='tab:purple')
     
     # 3. MN-Core2 (Double) -> オレンジ, 実線
-    ax.plot(time_axis, totalE_C, label='MN-Core2 (Double)', linewidth=3.0, color='tab:orange')
+    ax.plot(time_axis, totalE_C, label='MN-Core 2 (Double)', linewidth=3.0, color='tab:orange')
 
     # 4. MN-Core2 (Float) -> 緑, 実線
-    ax.plot(time_axis, totalE_D, label='MN-Core2 (Float)', linewidth=3.0, color='tab:green', alpha=0.8)
+    ax.plot(time_axis, totalE_D, label='MN-Core 2 (Float)', linewidth=3.0, color='tab:green', alpha=0.8)
     
     # --- グラフの体裁 (超特大文字) ---
     
     # 軸ラベル
-    ax.set_xlabel('Time', fontsize=28)
+    ax.set_xlabel('Time (s)', fontsize=28)
     ax.set_ylabel('$\mathrm{E}_{\mathrm{total, LJ}}$', fontsize=28)
     
     # 目盛りの数字
