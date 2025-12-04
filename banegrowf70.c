@@ -21,10 +21,10 @@ int main(void) {
     // 繰り返し部分
     for (int i = 1; i <= max_loop; i++) {
         // 1. オイラー法による更新
-        fprintf(fp, "fvmul -$lm8v $ls0v $nowrite\n");
-        fprintf(fp, "fvfma $mauf $lm0v $lr0v $lr0v #v(%d)\n", i);
+        fprintf(fp, "fvmul -$lm8v $ls0v $nowrite\n"); // -k/m * x0 = a0
+        fprintf(fp, "fvfma $mauf $lm0v $lr0v $lr8v #v(%d)\n", i); // a0 * h + v0 = v1 
         fprintf(fp, "nop\n");
-        fprintf(fp, "fvfma $lr0v $lm0v $ls0v $ls0v #x(%d)\n", i);
+        fprintf(fp, "fvfma $lr0v $lm0v $ls0v $ls0v #x(%d)\n", i); // v0 * h + x0 = x1
         fprintf(fp, "nop\n");
         
         // 2. エネルギー計算とL1BMへの転送 (毎ステップ実行)

@@ -4,13 +4,10 @@ import numpy as np
 
 # --- 設定 ---
 files_config = [
-    {"file": "eulerf70resulut.txt", "label": "Euler",           "color": "tab:blue",   "style": "--"},
-    {"file": "resultVV70.txt",     "label": "VV", "color": "tab:green",  "style": "-"},
-    {"file": "result_RK270.txt",   "label": "RK2",             "color": "tab:orange", "style": "-."},
-    {"file": "result_RK470.txt",   "label": "RK4",             "color": "tab:red",    "style": ":"},
+    {"file": "eulerf70result.txt",     "label": "Euler explicit", "color": "tab:blue",  "style": "-"},
 ]
 
-output_image = 'comparison_4methods_final.png'
+output_image = 'comparison_Euleronly.png'
 dt_default = 0.1 
 
 # --- プロット準備 ---

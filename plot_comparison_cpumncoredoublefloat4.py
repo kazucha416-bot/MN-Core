@@ -89,7 +89,7 @@ try:
     # --- グラフの体裁 (超特大文字) ---
     
     # 軸ラベル
-    ax.set_xlabel('Time (s)', fontsize=28)
+    ax.set_xlabel('Time', fontsize=28)
     ax.set_ylabel('$\mathrm{E}_{\mathrm{total, LJ}}$', fontsize=28)
     
     # 目盛りの数字

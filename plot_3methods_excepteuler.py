@@ -4,7 +4,6 @@ import numpy as np
 
 # --- 設定 ---
 files_config = [
-    {"file": "eulerf70resulut.txt", "label": "Euler",           "color": "tab:blue",   "style": "--"},
     {"file": "resultVV70.txt",     "label": "VV", "color": "tab:green",  "style": "-"},
     {"file": "result_RK270.txt",   "label": "RK2",             "color": "tab:orange", "style": "-."},
     {"file": "result_RK470.txt",   "label": "RK4",             "color": "tab:red",    "style": ":"},
@@ -18,7 +17,7 @@ fig = plt.figure(figsize=(10, 6))
 
 # ★修正1: 描画領域をギリギリまで広げる [left, bottom, width, height]
 # 文字が大きいため、はみ出さない最小限の余白(0.13)だけ確保し、残りをすべてグラフにします
-ax = fig.add_axes([0.13, 0.13, 0.86, 0.86]) 
+ax = fig.add_axes([0.15, 0.15, 0.80, 0.75]) 
 
 for config in files_config:
     filename = config['file']
@@ -51,11 +50,11 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 # ★修正2: 文字サイズをさらに大きく
-ax.set_xlabel('Time (s)', fontsize=28)
-ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
+ax.set_xlabel('Time (s)', fontsize=26)
+ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=26)
 
 # 目盛りの数字
-ax.tick_params(axis='both', labelsize=22)
+ax.tick_params(axis='both', labelsize=20)
 
 # グリッド
 ax.grid(True, which='both', linestyle='--', alpha=0.7)

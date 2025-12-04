@@ -1,715 +1,713 @@
-d set $lm0n0c0b0m0p0 10 3DCCCCCD000000000000000000000000000000000000000000000000000000003F800000000000000000000000000000000000000000000000000000000000003F000000000000000000000000000000
-imm f"1.0" $ls0v/1000 #x0=1.0
-imm f"0" $lr0v #v0=0
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(1)
+
+# lm0v h=0.1 lm8v h*k/m=0.1 lm16v 0.5(Eの計算用)
+d set $lm0n0c0b0m0p0 12 3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3f0000003f0000003f0000003f0000003f0000003f0000003f0000003f000000
+# $lr0v v0=0
+d set $lr0n0c0b0m0p0 1 0000000000000000
+# $ls0v x0=1.0
+d set $ls0n0c0b0m0p0 1 3f8000003f800000
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(1)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb0
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(2)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(2)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb4
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(3)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(3)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb8
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(4)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(4)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb12
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(5)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(5)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb16
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(6)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(6)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb20
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(7)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(7)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb24
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(8)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(8)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb28
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(9)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(9)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb32
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(10)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(10)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb36
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(11)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(11)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb40
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(12)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(12)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb44
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(13)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(13)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb48
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(14)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(14)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb52
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(15)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(15)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb56
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(16)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(16)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb60
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(17)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(17)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb64
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(18)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(18)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb68
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(19)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(19)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb72
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(20)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(20)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb76
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(21)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(21)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb80
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(22)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(22)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb84
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(23)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(23)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb88
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(24)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(24)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb92
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(25)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(25)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb96
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(26)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(26)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb100
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(27)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(27)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb104
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(28)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(28)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb108
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(29)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(29)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb112
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(30)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(30)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb116
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(31)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(31)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb120
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(32)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(32)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb124
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(33)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(33)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb128
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(34)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(34)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb132
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(35)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(35)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb136
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(36)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(36)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb140
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(37)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(37)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb144
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(38)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(38)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb148
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(39)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(39)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb152
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(40)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(40)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb156
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(41)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(41)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb160
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(42)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(42)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb164
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(43)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(43)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb168
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(44)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(44)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb172
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(45)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(45)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb176
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(46)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(46)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb180
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(47)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(47)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb184
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(48)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(48)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb188
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(49)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(49)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb192
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(50)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(50)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb196
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(51)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(51)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb200
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(52)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(52)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb204
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(53)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(53)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb208
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(54)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(54)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb212
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(55)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(55)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb216
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(56)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(56)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb220
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(57)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(57)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb224
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(58)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(58)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb228
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(59)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(59)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb232
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(60)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(60)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb236
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(61)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(61)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb240
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(62)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(62)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb244
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(63)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(63)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb248
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(64)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(64)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb252
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(65)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(65)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb256
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(66)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(66)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb260
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(67)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(67)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb264
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(68)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(68)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb268
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(69)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(69)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb272
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(70)
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(70)
-nop
+fvpassa $ln0v $ls0v
 fvmul $lr0v $lr0v $lr64v
 fvmul $ls0v $ls0v $nowrite
 fvadd $lr64v $mauf $nowrite
 fvmul $lm16v $mauf $nowrite
 l1bmm@0 $mauf $lb276
-fvmul -$lm8v $ls0v $nowrite
-fvfma $mauf $lm0v $lr0v $lr0v #v(71)
-nop
-fvfma $lr0v $lm0v $ls0v $ls0v #x(71)
-nop
-fvmul $lr0v $lr0v $lr64v
-fvmul $ls0v $ls0v $nowrite
-fvadd $lr64v $mauf $nowrite
-fvmul $lm16v $mauf $nowrite
-l1bmm@0 $mauf $lb280
-d getf $lb0n0c0b0 284
-d getf $lm0n0c0b0m0p0 16
+
+d getf $lm0n0c0b0m0p0 12
+d getf $ln0n0c0b0m0p0 4
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+d getf $lb0n0c0b0 280

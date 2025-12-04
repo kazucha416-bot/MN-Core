@@ -1,15 +1,90 @@
-#rの部分
-imm f"2.0" $t
+# lm0v h=0.1 lm8v h*k/m=0.1 lm16v 0.5(Eの計算用)
+d set $lm0n0c0b0m0p0 12 3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3dcccccd3f0000003f0000003f0000003f0000003f0000003f0000003f0000003f000000
+# $lr0v v0=0
+d set $lr0n0c0b0m0p0 1 0000000000000000
+# $ls0v x0=1.0
+d set $ls0n0c0b0m0p0 1 3f8000003f800000
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb0
 
-fvmul $lm0v $lm0v $lr8v  # r2 = pos * pos; // 1Dの距離の2乗
-nop/2
-frsqrt $lr8v $lr8v
-nop/2
-fvfma -$lm0v $mauf $t $nowrite
-nop/2
-fvmul $lr8v $mauf $lr8v
-nop/2
-fvmul $lr8v $lr8v $nowrite
-nop/2
-fvpassa $mauf $lr8v #lr8vにr2iが入った
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb4
 
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb8
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb12
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb16
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb20
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb24
+
+fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
+fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
+nop
+fvpassa $ln0v $ls0v
+fvmul $lr0v $lr0v $lr64v
+fvmul $ls0v $ls0v $nowrite
+fvadd $lr64v $mauf $nowrite
+fvmul $lm16v $mauf $nowrite
+l1bmm@0 $mauf $lb28
+d getf $lm0n0c0b0m0p0 12
+d getf $ln0n0c0b0m0p0 4
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+d getf $lb0n0c0b0 32

@@ -19,9 +19,9 @@ d set $ln0n0c0b0m0p2 4 bfb07ff40a6985753ff36463a89d1838bfd3db7140fb17bc000000000
 # 粒子３の速度
 d set $ln0n0c0b0m0p3 4 bfd1caadcdd53ec0c000d9d7d15eccaf3febe1942daa928b0000000000000000
 
-# lrの初期配置．面倒な計算は先に済ませて，値を入れておく
+# lrの初期配置．$lr80vにce06 = 4*epsilon*sigma^6 = 4, $lr88vにce12 = 4*epsilon*sigma^12 = 4 面倒な計算は先に済ませて，値を入れておく.
 d set $lr80n0c0b0m0 8 40100000000000004010000000000000401000000000000040100000000000004010000000000000401000000000000040100000000000004010000000000000
-# lsの初期配置．
+# lsの初期配置．$ls24vにcf06 = ce06*6 = 24, $ls32vにcf12 = ce12*12 = 48
 d set $ls24n0c0b0m0 8 40380000000000004038000000000000403800000000000040380000000000004048000000000000404800000000000040480000000000004048000000000000
 # [mslを使って相互作用を計算する]
 # 座標を時計回りに回転させてls0vに格納．
@@ -36,19 +36,20 @@ nop
 dvadd $lm0v -$ls0v $lr8v
 
 
-# lrに格納された距離の差6ペアを二乗してr2を求める．SDMの3.6.9.11参照．
+# lr0v,lr8vに格納された距離の差6ペアを二乗してx^2,y^2,z^2を求める．SDMの3.6.9.11参照．
 dvmulu $lr0v $lr0v $nowrite
 dvfmad $lr0v $lr0v $mauf $lr[16,24,32,40]
 dvmulu $lr8v $lr8v $nowrite
 dvfmad $lr8v $lr8v $mauf $lr[18,26,34,42]
 
 nop/2
-# r^2の合計6ペアを格納
+# 6ペアのr^2をlr40vに格納
 dvpassa $lr24v $nowrite
 dvadd $lr16v $mauf $nowrite
 dvadd $mauf $lr32v $lr40v
+
 # r2iを求めていく
-エネルギー
+nop
 drsqrt $lr40v $ls8v
 nop
 # r~^-2がls8vに格納された．これをNR法により補正していく．
@@ -92,6 +93,7 @@ dvpassa $lm58 $nowrite
 dvadd $lm56 $mauf $nowrite
 l1bmr4dfadd $mauf $lb0
 
+# MN-Core上では作用反作用みたいな感じで書くのは効率が悪いみたい
 d getd $lm0n0c0b0m0 32
 d getd $ln0n0c0b0m0 32
 d getd $lr0n0c0b0m0 64

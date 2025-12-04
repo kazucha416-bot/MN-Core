@@ -1,24 +1,29 @@
 import struct
 import sys
 
-def float_to_hex64(value):
+def float_to_hex_mixed(value):
     """
-    数値をIEEE 754倍精度浮動小数点数(64bit)の
-    16桁16進数文字列に変換して返します。
+    数値をIEEE 754の倍精度(64bit)と単精度(32bit)の
+    16進数文字列に変換して返します。
     """
     try:
         # 入力をfloat型にキャスト
         val_float = float(value)
         
-        # double(8bytes)としてパックし、unsigned long long(8bytes)としてアンパック
-        packed = struct.pack('>d', val_float)
-        int_val = struct.unpack('>Q', packed)[0]
+        # --- 倍精度 (Double, 64bit) ---
+        packed64 = struct.pack('>d', val_float)
+        int_val64 = struct.unpack('>Q', packed64)[0]
+        hex64 = f"{int_val64:016x}"
+
+        # --- 単精度 (Float, 32bit) ---
+        packed32 = struct.pack('>f', val_float)
+        int_val32 = struct.unpack('>I', packed32)[0]
+        hex32 = f"{int_val32:08x}"
         
-        # 16桁の16進数文字列にフォーマット (0埋め)
-        return f"{int_val:016x}"
+        return hex64, hex32
         
     except ValueError:
-        return "エラー: 数値を入力してください"
+        return None, None
 
 # --- 実行ブロック ---
 if __name__ == "__main__":
@@ -30,10 +35,17 @@ if __name__ == "__main__":
             if user_input.lower() == 'q':
                 break
             
-            # 変換して表示
-            hex_result = float_to_hex64(user_input)
-            print(f"Hex (64bit): {hex_result}")
+            # 変換
+            hex64, hex32 = float_to_hex_mixed(user_input)
             
+            if hex64 is not None:
+                print(f"Double (64bit): {hex64}")
+                print(f"Float  (32bit): {hex32}")
+            else:
+                print("エラー: 数値を入力してください")
+            
+            print("-" * 20) # 区切り線
+
         except KeyboardInterrupt:
             break
         except Exception as e:
