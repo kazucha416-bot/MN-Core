@@ -3,7 +3,7 @@ import os
 def main():
     # 設定
     filepath = "/home/kazuki/mncore/baneljdouble.vsm"
-    loop_count = 1
+    loop_count = 2
     
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
@@ -12,70 +12,17 @@ def main():
     with open(filepath, "w") as f:
         # --- 1. 初期化ブロック ---
         f.write("""
-d set $lm0n0c0b0m0p0 5 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff0000000000000
+d set $lm0n0c0b0m0p0 6 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff00000000000003ff0000000000000
 d set $ln0n0c0b0m0p0 2 00000000000000003eb0c6f7a0b5ed8d
-d set $ls18n0c0b0m0p0 1 3fe0000000000000
-d set $lr20n0c0b0m0p0 1 4010000000000000
-dvmulu $lm8 $lm8 $nowrite
-dvmulu $mauf $lm8 $nowrite
-dvmulu $mauf $mauf $lr0
-dvmulu $lr20 $lm6 $ls0
-nop
-dvmulu $lr0 $lr0 $lr2
-dvmulu $ls0 $lr0 $lr0
-nop/2
-dvmulu $ls0 $lr2 $lr2
-immu i"0x40180000" $nowrite
-dvmulu $aluf $lr0 $ls0
-immu i"0x40280000" $nowrite
-dvmulu $aluf $lr2 $ls2
-                
-dvmulu $lm0 $lm0 $lr4
-nop/2
-drsqrt $lr4 $nowrite
-dvmulu $aluf $aluf $ls4
-nop
-immu i"0x40000000" $nowrite
-dvfmau $lr4 -$ls4 $aluf $nowrite
-nop/2
-dvmulu $ls4 $mauf $lr6 $ls4
-nop
-immu i"0x40000000" $nowrite
-dvfmau $lr4 -$ls4 $aluf $nowrite
-nop/2
-dvmulu $ls4 $mauf $lr6 $ls4
-nop/2
-dvmulu $lr6 $lr6 $ls6
-nop/2
-dvmulu $lr6 $ls6 $lr8
-nop/2
-dvmulu $lr8 $lr8 $lr10
-nop
-dvmulu $ls0 $lr8 $nowrite
-dvfmau $ls2 $lr10 -$mauf $nowrite
-dvmulu $mauf $lr6 $ls8
-nop/2
-dvmulu $ls8 $lm0 $ls10
+d set $lr0n0c0b0m0p0 2 40100000000000004010000000000000
+d set $ls0n0c0b0m0p0 2 40380000000000004048000000000000
 
-drsqrt $lm4 $nowrite
-dvmulu $aluf $aluf $ls4
-nop
-immu i"0x40000000" $nowrite
-dvfmau $lm4 -$ls4 $aluf $nowrite
-nop/2
-dvmulu $ls4 $mauf $lm10 $ls4
-nop
-immu i"0x40000000" $nowrite
-dvfmau $lm4 -$ls4 $aluf $nowrite
-nop/2
-dvmulu $ls4 $mauf $lm10 $ls4
-nop/2
-dvmulu $lm10 $ls10 $ls12
 
-dvmulu $ln2 $ls18 $lr12
-
-dvpassa $lm2 $lr14
-
+drsqrt $lm0 $lr4
+dvmulu $lr4 $lr4 $ls4
+dvmulu $lm0 $ls4 $lr6
+dvfmau $lr6 -$ln4 $ls6 $ls8
+dvmulu $ls8 $lr4 $lr8 $lr4
 """)
 
         # --- 2. ループ部分 ---
