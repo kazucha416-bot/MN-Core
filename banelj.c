@@ -62,7 +62,12 @@ int main(void) {
 
     // --- 5. 時間発展メインループ (ベレの速度形式) ---
     for (int k = 0; k < time_steps; k++) {
+        // --- 5e. エネルギーの計算とファイルへの出力 ---
+        pe = ce12 * r12i - ce06 * r06i; // ポテンシャルエネルギー
+        ke = 0.5 * mass * (v_x*v_x + v_y*v_y + v_z*v_z); // 運動エネルギー
+        total_e = pe + ke;
         
+        fprintf(fp, "%f\t%f\t%f\t%f\t%f\n", (k * dt), pos_x, pe, ke, total_e);
         // --- 5a. 位置の更新 (Verlet Step 1) ---
         // x(t+dt) = x(t) + v(t)*dt + 0.5*a(t)*dt^2
         pos_x = pos_x + dt * v_x + 0.5 * dt * dt * (f1_x / mass);
@@ -91,12 +96,7 @@ int main(void) {
         f1_y = f2_y;
         f1_z = f2_z;
 
-        // --- 5e. エネルギーの計算とファイルへの出力 ---
-        pe = ce12 * r12i - ce06 * r06i; // ポテンシャルエネルギー
-        ke = 0.5 * mass * (v_x*v_x + v_y*v_y + v_z*v_z); // 運動エネルギー
-        total_e = pe + ke;
-        
-        fprintf(fp, "%f\t%f\t%f\t%f\t%f\n", (k * dt), pos_x, pe, ke, total_e);
+    
     }
 
     // --- 6. クローズ処理 ---

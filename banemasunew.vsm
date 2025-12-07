@@ -59,12 +59,12 @@ l1bmm@0 $mauf $lb16
 fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
 fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)
 nop
-fvpassa $ln0v $ls0v
-fvmul $lr0v $lr0v $lr64v
-fvmul $ls0v $ls0v $nowrite
-fvadd $lr64v $mauf $nowrite
-fvmul $lm16v $mauf $nowrite
-l1bmm@0 $mauf $lb20
+fvpassa $ln0v $ls0v # ln0v = ls0v
+fvmul $lr0v $lr0v $lr64v # v * v
+fvmul $ls0v $ls0v $nowrite # x * x
+fvadd $lr64v $mauf $nowrite # v^2 + x^2
+fvmul $lm16v $mauf $nowrite # 0.5 * (v^2 + x^2) = E
+l1bmm@0 $mauf $lb20 # E → L1 Block Memory
 
 fvfma $lm0v $lr0v $ls0v $ln0v # x(i+1)=x(i)+h*v(i)
 fvfma -$lm8v $ls0v $lr0v $lr0v # v(i+1)=v(i)-h*k/m*x(i)

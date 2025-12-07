@@ -36,7 +36,7 @@ nop
 dvadd $lm0v -$ls0v $lr8v
 
 
-# lr0v,lr8vに格納された距離の差6ペアを二乗してx^2,y^2,z^2を求める．SDMの3.6.9.11参照．
+# lr0v,lr8vに格納された距離の差6ペアを二乗してx^2,y^2,z^2を求める．
 dvmulu $lr0v $lr0v $nowrite
 dvfmad $lr0v $lr0v $mauf $lr[16,24,32,40]
 dvmulu $lr8v $lr8v $nowrite
