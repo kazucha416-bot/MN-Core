@@ -3,7 +3,7 @@
 #include <stdlib.h> // rand() を使うために追加
 
 int num = 4; // 256 から 4 に変更
-int time = 1000;
+int time = 100000;
 
 int main(void){
 /* initial values */
