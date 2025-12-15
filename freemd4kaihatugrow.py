@@ -1,3 +1,17 @@
+import os
+
+def main():
+    # 設定
+    filepath = "/home/kazuki/mncore/freemd4jissenn.vsm"
+    loop_count = 10
+    
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
+    print(f"４粒子MD単精度アセンブリコードを {filepath} に書き出します...")
+
+    with open(filepath, "w") as f:
+        # --- 1. 初期化ブロック ---
+        f.write("""
 # LM0の値セット
 # 粒子0 
 d set $lm0n0c0b0m0p0 4 0000000000000000000000000000000000000000000000000000000000000000
@@ -109,8 +123,14 @@ fvmul $lr0v $aluf $lr0v # 運動エネルギー完成　lr0vに入る
 l2bm@0 $lb0 $lc0
 # 空になったL1BMに運動エネルギーを転送
 l1bmm@0 $lr0v $lb0
+""")
 
-
+        # --- 2. ループ部分 ---
+        for k in range(loop_count):
+            L1BM_addr = k * 16
+            l1bm_addr = k * 4
+            f.write(f"""
+# ここからループ開始
 # 初期位置から求めた力と初期速度を使って位置の更新 pos[0][j] = pos[0][j] + dt * v[0][j] + 0.5 * dt * dt / mas[j] * force1[0][j]
 imm f"0.5" $lr0v #　係数
 imm f"0.00001" $ls0v # h^2
@@ -180,7 +200,7 @@ nop/2
 fvfma $lr64v $ln16v -$ls8v $nowrite
 fvmul $mauf $ln16v $lm8v
 nop/2
-l1bmm@0 $lm8v $lb16 # メモリは12ずつ増やす　今はlm8vを使っているが，あとでlr80と🦀変えるかも
+l1bmm@0 $lm8v $lb{L1BM_addr} # メモリは16ずつ増やす　今はlm8vを使っているが，あとでlr80と🦀変えるかも
 # fc = (cf12 * r12i - cf06 * r06i) * r2i 計算
 fvfma $lr72v $ln16v -$ls16v $nowrite
 fvmul $mauf $ln16v $nowrite
@@ -216,15 +236,22 @@ fvadd $lr16v $mauf $lr0v
 imm f"0.5" $nowrite # m/2
 fvmul $lr0v $aluf $lr0v # 運動エネルギー完成　lr0vに入る
 # L1BMに入っているポテンシャルエネルギーをL2BMに転送
-l2bm@0 $lb16 $lc16
+l2bm@0 $lb{L1BM_addr} $lc{L1BM_addr}
 # 空になったL1BMに運動エネルギーを転送
-l1bmm@0 $lr0v $lb4
+l1bmm@0 $lr0v $lb{l1bm_addr}
+""")
 
+        # --- 3. 終了処理 ---
+        f.write(f"""
+d getf $lb0n0c0b0 {4 * loop_count}
+d getf $lc0n0c0 {16 * loop_count}
+""")
 
-# d get
-d getf $lm0n0c0b0m0 8
-d getf $ln0n0c0b0m0 16
-d getf $lr0n0c0b0m0 48
-d getf $ls0n0c0b0m0 56
-d getf $lb0n0c0b0 48
-d getf $lc0n0c0 64
+    print("完了しました!")
+
+if __name__ == "__main__":
+    main()
+
+# エネルギーの出力を１０ステップ，もしくは１００ステップごとに行うように変更する
+# dmpファイルからの値の整理方法を確立する．具体的には，１０進数への変換，値の足しこみ等
+# 20251215
