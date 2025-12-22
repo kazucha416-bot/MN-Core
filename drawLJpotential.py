@@ -25,18 +25,17 @@ F_lj = lj_force(r)
 
 # グラフ作成 (LJ)
 plt.figure(figsize=(8, 6))
-plt.plot(r, V_lj, label='Potential $V(r) \propto r^{-12} - r^{-6}$', color='blue', linewidth=3)
-plt.plot(r, F_lj, label='Force $F(r)$ (Non-linear)', color='red', linestyle='--', linewidth=2)
+plt.plot(r, V_lj, label='Potential', color='blue', linewidth=3)
+plt.plot(r, F_lj, label='Force', color='red', linestyle='--', linewidth=2)
 plt.axhline(0, color='black', linewidth=1)
-plt.xlabel('Distance $r / \sigma$', fontsize=16)
+plt.xlabel('Distance', fontsize=16)
 plt.ylabel('Energy / Force', fontsize=16)
 plt.ylim(-1.5, 3.0)
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.legend(fontsize=14)
-plt.title('Lennard-Jones (Non-linear)', fontsize=18)
 plt.tight_layout()
-plt.savefig('lj_plot.png', dpi=300)
-print("保存完了: lj_plot.png (非線形の例)")
+plt.savefig('lj_plot.pdf', dpi=300)
+print("保存完了: lj_plot.pdf (非線形の例)")
 # plt.show() # 連続して表示するために一旦コメントアウト
 
 

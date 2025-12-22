@@ -3,16 +3,16 @@ import os
 def main():
     # 設定
     filepath = "/home/kazuki/mncore/baneljdouble.vsm"
-    loop_count = 1000
+    loop_count = 300
     
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
-    print(f"倍精度アセンブリコードを {filepath} に書き出します...")
+    print(f"2粒子LJ問題倍精度vsmを {filepath} に書き出します...")
 
     with open(filepath, "w") as f:
         # --- 1. 初期化ブロック ---
         f.write("""
-d set $lm0n0c0b0m0p0 7 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff00000000000003ff00000000000003eb0c6f7a0b5ed8d
+d set $lm0n0c0b0m0p0 7 3ff4cccccccccccd3f1a36e2eb1c432d3ff00000000000003ff00000000000003ff00000000000003ff00000000000003e45798ee2308c3a
 d set $ln0n0c0b0m0p0 3 00000000000000003eb0c6f7a0b5ed8d3fe0000000000000
 d set $lr0n0c0b0m0p0 2 40100000000000004010000000000000
 d set $ls0n0c0b0m0p0 3 403800000000000040480000000000003ff8000000000000
@@ -37,6 +37,14 @@ dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
 nop/2
 # N法3回目
+dvmulu $lr4 $lr4 $ls6
+nop/2
+dvmulu $lm0 $ls6 $lr6
+nop/2
+dvfmau $lr6 -$ln4 $ls4 $nowrite
+dvmulu $mauf $lr4 $lr4
+nop/2
+# N法4回目
 dvmulu $lr4 $lr4 $ls6
 nop/2
 dvmulu $lm0 $ls6 $lr6
@@ -98,6 +106,14 @@ dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
 nop/2
 # N法3回目
+dvmulu $lr4 $lr4 $ls6
+nop/2
+dvmulu $lm0 $ls6 $lr6
+nop/2
+dvfmau $lr6 -$ln4 $ls4 $nowrite
+dvmulu $mauf $lr4 $lr4
+nop/2
+# N法4回目
 dvmulu $lr4 $lr4 $ls6
 nop/2
 dvmulu $lm0 $ls6 $lr6

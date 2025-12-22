@@ -44,7 +44,7 @@ dvmulu $lm0 $ls6 $lr6
 nop/2
 dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
-nop/2
+
 d getd $lm0n0c0b0m0p0 2
 d getd $ln0n0c0b0m0p0 2
 d getd $lr0n0c0b0m0p0 4

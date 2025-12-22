@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import os
 
 def f(y, r):
     return y**(-2) - r
@@ -75,10 +76,9 @@ def plot_newton_iterations(r, y0, iterations=3):
         current_y = next_y
 
     # 真値の線
-    plt.axvline(y_target, color='gray', linestyle=':', label=f'True value $1/\sqrt{{r}} \\approx {y_target:.4f}$')
+    plt.axvline(y_target, color='gray', linestyle=':', label=f'True value')
 
     # グラフの体裁（フォントサイズを全体的に拡大）
-    plt.title(f"Newton-Raphson for $1/\sqrt{{r}}$ (r={r})\nTarget: $f(y) = y^{{-2}} - {r} = 0$", fontsize=22)
     plt.xlabel('$y$ (Estimate)', fontsize=18)
     plt.ylabel('$f(y)$', fontsize=18)
     
@@ -90,9 +90,22 @@ def plot_newton_iterations(r, y0, iterations=3):
     plt.legend(loc='upper right', fontsize=14)
     
     plt.tight_layout()
-    plt.savefig('newton_raphson_3iterations.png')
-    print("Graph saved as newton_raphson_3iterations.png")
-    plt.show()
+    # --- 保存処理 ---
+    # 保存先のディレクトリとファイル名
+    save_dir = r'/home/kazuki/thesis/images' 
+    filename = 'newton_raphson_3iterations.pdf'  # 画質最強のPDFに変更しておきました！（PNGが良ければ.pngに戻してね）
+    
+    # パスを結合
+    save_path = os.path.join(save_dir, filename)
+
+    # ディレクトリが存在しない場合に備えて、なければ作る（念のため）
+    os.makedirs(save_dir, exist_ok=True)
+
+    # 保存実行
+    plt.savefig(save_path, dpi=300)
+    print(f"Graph saved as {save_path}")
+
+    # plt.show() # 確認したいときはここを外す
 
 # 実行: r=1.3, 初期値 y0=0.4 でシミュレーション
 # 目標値は 1/sqrt(1.3) ≈ 0.877 です

@@ -37,6 +37,14 @@ nop/2
 dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
 nop/2
+# N法4回目
+dvmulu $lr4 $lr4 $ls6
+nop/2
+dvmulu $lm0 $ls6 $lr6
+nop/2
+dvfmau $lr6 -$ln4 $ls4 $nowrite
+dvmulu $mauf $lr4 $lr4
+nop/2
 # 補正した1/rが求まったので，r2i,r6iを求めていく
 dvmulu $lr4 $lr4 $nowrite
 dvmulu $mauf $mauf $lr8 # Final r2i
@@ -85,6 +93,14 @@ dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
 nop/2
 # N法3回目
+dvmulu $lr4 $lr4 $ls6
+nop/2
+dvmulu $lm0 $ls6 $lr6
+nop/2
+dvfmau $lr6 -$ln4 $ls4 $nowrite
+dvmulu $mauf $lr4 $lr4
+nop/2
+# N法4回目
 dvmulu $lr4 $lr4 $ls6
 nop/2
 dvmulu $lm0 $ls6 $lr6
