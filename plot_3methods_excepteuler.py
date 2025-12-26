@@ -1,22 +1,36 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os  # パス操作用
 
 # --- 設定 ---
 files_config = [
-    {"file": "resultVV70.txt",     "label": "VV", "color": "tab:green",  "style": "-"},
-    {"file": "result_RK270.txt",   "label": "RK2",             "color": "tab:orange", "style": "-."},
-    {"file": "result_RK470.txt",   "label": "RK4",             "color": "tab:red",    "style": ":"},
+    {"file": "resultVV70.txt",     "label": "VV",  "color": "tab:green",  "style": "-"},
+    {"file": "result_RK270.txt",   "label": "RK2", "color": "tab:orange", "style": "-."},
+    {"file": "result_RK470.txt",   "label": "RK4", "color": "tab:red",    "style": ":"},
 ]
 
-output_image = 'comparison_4methods_final.png'
+# 保存先の設定
+save_dir = r'/home/kazuki/thesis/images'
+output_filename = 'ExceptEuler.pdf'
 dt_default = 0.1 
+
+# 保存先のディレクトリが存在しない場合は作成する
+if not os.path.exists(save_dir):
+    try:
+        os.makedirs(save_dir)
+        print(f"ディレクトリを作成しました: {save_dir}")
+    except OSError as e:
+        print(f"⚠️ ディレクトリ作成エラー: {e}")
+
+# フルパスの生成
+output_path = os.path.join(save_dir, output_filename)
 
 # --- プロット準備 ---
 fig = plt.figure(figsize=(10, 6))
 
-# ★修正1: 描画領域をギリギリまで広げる [left, bottom, width, height]
-# 文字が大きいため、はみ出さない最小限の余白(0.13)だけ確保し、残りをすべてグラフにします
+# ★修正1: 描画領域の設定 [left, bottom, width, height]
+# 軸ラベルが大きいので少し余白を調整しました (0.13 -> 0.15)
 ax = fig.add_axes([0.15, 0.15, 0.80, 0.75]) 
 
 for config in files_config:
@@ -37,7 +51,7 @@ for config in files_config:
                  label=label_name, 
                  color=config['color'], 
                  linestyle=config['style'], 
-                 linewidth=3.0,  # 線もさらに太く(2.5 -> 3.0)
+                 linewidth=3.0, 
                  alpha=0.8)
                  
         print(f"'{filename}' をプロットしました。")
@@ -49,7 +63,7 @@ for config in files_config:
 
 # --- グラフの体裁 ---
 
-# ★修正2: 文字サイズをさらに大きく
+# ★修正2: 文字サイズ設定
 ax.set_xlabel('Time (s)', fontsize=26)
 ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=26)
 
@@ -59,10 +73,10 @@ ax.tick_params(axis='both', labelsize=20)
 # グリッド
 ax.grid(True, which='both', linestyle='--', alpha=0.7)
 
-# ★修正3: 凡例の枠を消す (frameon=False)
-# 文字サイズも大きく (14 -> 18)
+# ★修正3: 凡例 (枠なし, RK系と比較するための配置)
 ax.legend(fontsize=18, loc='best', frameon=False)
 
 # --- 保存 ---
-plt.savefig(output_image)
-print(f"\nグラフを '{output_image}' として保存しました。")
+# PDF形式で指定のパスに保存
+plt.savefig(output_path)
+print(f"\nグラフを以下に保存しました:\n{output_path}")

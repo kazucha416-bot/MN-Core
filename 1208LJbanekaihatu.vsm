@@ -32,7 +32,7 @@ nop/2
 # N法3回目
 dvmulu $lr4 $lr4 $ls6
 nop/2
-dvmulu $lm0 $ls6 $lr6
+dvmulu $lm0 $ls6 $lr6 
 nop/2
 dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4

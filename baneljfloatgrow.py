@@ -12,7 +12,8 @@ def main():
 
     with open(filepath, "w") as f:
         # --- 1. 初期化ブロック ---
-        f.write("""d set $lm0n0c0b0m0p0 5 3fa666663fa666663a83126f3a83126f3f8000003f8000003f8000003f8000003f8000003f800000
+        f.write("""
+d set $lm0n0c0b0m0p0 5 3fa666663fa666663a83126f3a83126f3f8000003f8000003f8000003f8000003f8000003f800000
 d set $ln0n0c0b0m0p0 2 0000000000000000358637bd358637bd
 
 imm f"4.0" $t
@@ -79,7 +80,8 @@ fvpassa $lm2 $lr14
             # 単精度なのでアドレスは 4 ずつ増やす
             lb_addr = k * 4
             
-            f.write(f"""fvpassa $ln0 $ls14
+            f.write(f"""
+fvpassa $ln0 $ls14
 nop/2
 fvfma $lr14 $ls14 $lm0 $nowrite
 fvfma $lr12 $ls12 $mauf $lm0
