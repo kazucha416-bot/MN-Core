@@ -1,5 +1,6 @@
 *.dmp
 *.tar.gz
+*.asm
 my_env/
 *.asm
 *.dmp

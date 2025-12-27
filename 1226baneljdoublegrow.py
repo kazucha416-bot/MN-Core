@@ -3,7 +3,7 @@ import os
 def main():
     # 設定
     filepath = "/home/kazuki/mncore/1226baneljdouble.vsm"
-    loop_count = 2000
+    loop_count = 1
     # interval = 1 # 毎ステップなので interval は実質不要
     
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
