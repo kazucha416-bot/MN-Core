@@ -2,8 +2,8 @@
 #include <math.h>
 #include <stdlib.h> // rand() を使うために追加
 
-int num = 4; // 256 から 4 に変更
-int time = 100000;
+int num = 4; 
+int time = 1000;
 
 int main(void){
 /* initial values */
@@ -73,7 +73,7 @@ int main(void){
     /* force & potential energy*/
     float x, y, z, r2, r2i, r06i, r12i, ep, engp, fc, fx, fy, fz, force1[3][num], force2[3][num];
     float dt, eps, sigma, ce12, ce06, cf12, cf06;
-    dt = 0.005;
+    dt = 0.001;
     eps = 1.0;
     sigma = 1.0;
     ce12 = 4 * eps * pow(sigma, 12);
@@ -191,7 +191,7 @@ int main(void){
     }
     
     FILE *e;
-    e = fopen("/home/kazuki/mncore/MD_hukushu_FBC4_data.txt", "w");
+    e = fopen("/home/kazuki/mncore/mdfree4_cpu_result.txt", "w");
     for(int k=0; k<time; k++){
         fprintf(e, "%f\t%f\t%f\t%f\n", dt*k, engp_value[k], ke_value[k], total_value[k]);
     }
