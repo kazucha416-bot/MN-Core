@@ -89,7 +89,23 @@ fvfma $lr72v $ln16v -$ls16v $nowrite
 fvmul $mauf $ln16v $nowrite
 fvmul $mauf $ln8v $ls24v # fcがls24vに入る このあとlr0v~lr16vの座標と掛け算をするのでlsに格納
 nop
+#コード修正点．ls24vのfcを分配する．
+fvpassa $ls24 $ls32v
+fvpassa $ls26 $ls40v
+fvpassa $ls28 $ls48v
 # fx,fy,fzを求める fx = fc * x
+fvmul $ls32v $lr0v $ls[56,64,72,80] # fx
+fvmul $ls40v $lr8v $ls[58,66,74,82] # fy  
+fvmul $ls48v $lr16v $ls[60,68,76,84] # fz
+nop
+fvpassa $ls56v $nowrite
+fvadd $mauf $ls64v $nowrite
+fvadd $mauf $ls72v $ls56v # ls56vにforce1が入った
+
+
+
+# fx,fy,fzを求める fx = fc * x 
+# ここが致命的に違う！！
 fvmul $ls24v $lr0v $ls32v # fx
 fvmul $ls24v $lr8v $ls40v # fy
 fvmul $ls24v $lr16v $ls48v # fz

@@ -1,9 +1,9 @@
-def generate_4particle_vsm_final(filename, loop_steps=10):
+def generate_4particle_v2(filename, loop_steps=10):
     # ==========================================
     # 1. 初期化ブロック
     # ==========================================
     init_template = [
-        "# 1228 4-Particle MD - Initialization",
+        "# 1229 4-Particle MD - Initialization",
         "d set $lm0n0c0b0m0p0 4 0000000000000000000000000000000000000000000000000000000000000000",
         "d set $lm0n0c0b0m0p1 4 00000000000000003f800000000000003f800000000000000000000000000000",
         "d set $lm0n0c0b0m0p2 4 3f800000000000003f8000000000000000000000000000000000000000000000",
@@ -65,18 +65,21 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
         "fvfma $lr64v $ln16v -$ls8v $nowrite",
         "fvmul $mauf $ln16v $lm8v",
         "nop/2",
-        "l1bmm@0 $lm8v $lb{lb_pe}",
+        "l1bmm@0 $lm8v $lb{lb_pe}", # ★ PE出力 (address += 16)
         "fvfma $lr72v $ln16v -$ls16v $nowrite",
         "fvmul $mauf $ln16v $nowrite",
         "fvmul $mauf $ln8v $ls24v",
         "nop",
-        "fvmul $ls24v $lr0v $ls32v",
-        "fvmul $ls24v $lr8v $ls40v",
-        "fvmul $ls24v $lr16v $ls48v",
-        "fvpassa $ls40v $nowrite",
-        "fvadd $ls32v $mauf $nowrite",
+        "fvpassa $ls24v $ls32v", # fc分配
+        "fvpassa $ls24v $ls40v", # fc分配
+        "fvpassa $ls24v $ls48v", # fc分配
+        "fvmul $ls32v $lr0v $ls32v",
+        "fvmul $ls40v $lr8v $ls40v",
+        "fvmul $ls48v $lr16v $ls48v",
+        "nop",
+        "fvpassa $ls32v $nowrite",
+        "fvadd $mauf $ls40v $nowrite",
         "fvadd $mauf $ls48v $ls56v",
-        "nop/2",
         "fvmul $ln0v $ln0v $lr[0,8,16,24]",
         "nop",
         "fvpassa $lr8v $nowrite",
@@ -84,8 +87,8 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
         "fvadd $lr16v $mauf $lr0v",
         "imm f\"0.5\" $nowrite",
         "fvmul $lr0v $aluf $lr0v",
-        "l2bm@0 $lb{lb_pe} $lc{lc}",
-        "l1bmm@0 $lr0v $lb{lb_ke}"
+        "l2bm@0 $lb{lb_pe} $lc{lc}", # ★ PE転送 (address += 16)
+        "l1bmm@0 $lr0v $lb{lb_ke}"   # ★ KE出力 (address += 4)
     ]
 
     # ==========================================
@@ -150,16 +153,20 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
         "fvfma $lr64v $ln16v -$ls8v $nowrite",
         "fvmul $mauf $ln16v $lm8v",
         "nop/2",
-        "l1bmm@0 $lm8v $lb{lb_pe}",
+        "l1bmm@0 $lm8v $lb{lb_pe}", # ★ PE出力
         "fvfma $lr72v $ln16v -$ls16v $nowrite",
         "fvmul $mauf $ln16v $nowrite",
         "fvmul $mauf $ln8v $ls24v",
         "nop",
-        "fvmul $ls24v $lr0v $ls32v",
-        "fvmul $ls24v $lr8v $ls40v",
-        "fvmul $ls24v $lr16v $ls48v",
-        "fvpassa $ls40v $nowrite",
-        "fvadd $ls32v $mauf $nowrite",
+        "fvpassa $ls24v $ls32v", # fc分配
+        "fvpassa $ls24v $ls40v", # fc分配
+        "fvpassa $ls24v $ls48v", # fc分配
+        "fvmul $ls32v $lr0v $ls32v",
+        "fvmul $ls40v $lr8v $ls40v",
+        "fvmul $ls48v $lr16v $ls48v",
+        "nop",
+        "fvpassa $ls32v $nowrite",
+        "fvadd $mauf $ls40v $nowrite",
         "fvadd $mauf $ls48v $lr80v",
         "nop/2",
         "imm f\"0.5\" $lr0v",
@@ -177,16 +184,16 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
         "fvadd $lr16v $mauf $lr0v",
         "imm f\"0.5\" $nowrite",
         "fvmul $lr0v $aluf $lr0v",
-        "l2bm@0 $lb{lb_pe} $lc{lc}",
-        "l1bmm@0 $lr0v $lb{lb_ke}",
-        "fvpassa $lr80v $ls56v"
+        "l2bm@0 $lb{lb_pe} $lc{lc}", # ★ PE転送
+        "l1bmm@0 $lr0v $lb{lb_ke}",  # ★ KE出力
+        "fvpassa $lr80v $ls56v"      # Force swap (f2 -> f1)
     ]
 
     with open(filename, 'w') as f:
         # --- アドレスカウンタ初期化 ---
-        lb_pe_offset = 0  # PE用 (16ずつ増加)
-        lb_ke_offset = 0  # KE用 (4ずつ増加)
-        lc_offset = 0     # LC用 (16ずつ増加)
+        lb_pe_offset = 0  # 16ずつ増加
+        lb_ke_offset = 0  # 4ずつ増加
+        lc_offset = 0     # 16ずつ増加
 
         # --- Init Block ---
         for line in init_template:
@@ -199,14 +206,15 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
             )
             f.write(code_line + "\n")
         
-        # Init完了後のカウンタ更新
+        # カウンタ更新
         lb_pe_offset += 16
         lc_offset    += 16
         lb_ke_offset += 4
 
         # --- Loop Block ---
-        print(f"Generating {loop_steps} loops with Final Output...")
+        print(f"Generating {loop_steps} loops...")
         for step in range(1, loop_steps + 1):
+            f.write(f"# Loop {step}\n")
             for line in loop_template:
                 if line.strip().startswith("#"): continue
                 
@@ -217,7 +225,7 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
                 )
                 f.write(code_line + "\n")
             
-            # ループごとのカウンタ更新
+            # カウンタ更新
             lb_pe_offset += 16
             lc_offset    += 16
             lb_ke_offset += 4
@@ -225,17 +233,20 @@ def generate_4particle_vsm_final(filename, loop_steps=10):
         # ==========================================
         # 3. 最終出力 (d getf)
         # ==========================================
-        # サイズ計算: (ループ回数 + 初期化1回) * 単位サイズ
         total_steps = loop_steps + 1
-        size_lb = 4 * total_steps  # KE用 (4 word/step)
-        size_lc = 16 * total_steps # PE用 (16 word/step)
+        
+        # サイズ計算
+        # KE: 1ステップあたり4ワード
+        size_lb = 4 * total_steps
+        # PE: 1ステップあたり16ワード
+        size_lc = 16 * total_steps
 
+        f.write("\n# Final Data Retrieval\n")
         f.write(f"d getf $lb0n0c0b0 {size_lb}\n")
         f.write(f"d getf $lc0n0c0 {size_lc}\n")
 
     print(f"Done! Generated: {filename}")
-    print(f"Loop Steps: {loop_steps}")
     print(f"Output Size -> LB(KE): {size_lb}, LC(PE): {size_lc}")
 
 if __name__ == "__main__":
-    generate_4particle_vsm_final("1228_4particle_float.vsm", loop_steps=500)
+    generate_4particle_v2("1229_4particle_v2.vsm", loop_steps=500)
