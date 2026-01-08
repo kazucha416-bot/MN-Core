@@ -1,0 +1,67 @@
+# Newton-Raphson法による逆平方根計算（単精度版）
+# $lm0 : 入力値
+# $lr4 : 初期近似値
+# $lr10 : N法1回目の結果
+# $lr12 : N法2回目の結果
+# $lr14 : N法3回目の結果
+# $lr16 : N法4回目の結果
+# $lr18 : N法5回目の結果
+# 結果は表示される小数じゃなくて，16進数の値を抽出する．
+# 16進数の値をそのまま解釈してプロットするコードを書けば図が書ける．
+# ところどころd setで余計な値が入っているが無視．
+# 用いた式は yn+1 = yn * (1.5 - 0.5 * x * yn^2 ）
+# 初期値と命令の接頭語を変えるだけで倍精度に変更可能．
+
+d set $lm0n0c0b0m0p0 7 40400000000000003a83126f000000003f800000000000003f800000000000003f800000000000003f80000000000000358637bd00000000
+d set $ln0n0c0b0m0p0 3 0000000000000000358637bd000000003f00000000000000
+d set $lr0n0c0b0m0p0 2 40800000000000004080000000000000
+d set $ls0n0c0b0m0p0 3 41c000000000000042400000000000003fc0000000000000
+
+frsqrt $lm0 $lr4
+nop/2
+# N法1回目
+fvmul $lr4 $lr4 $ls6
+nop/2
+fvmul $lm0 $ls6 $lr6
+nop/2
+fvfma $lr6 -$ln4 $ls4 $nowrite
+fvmul $mauf $lr4 $lr10
+nop/2
+# N法2回目
+fvmul $lr10 $lr10 $ls6
+nop/2
+fvmul $lm0 $ls6 $lr6
+nop/2
+fvfma $lr6 -$ln4 $ls4 $nowrite
+fvmul $mauf $lr10 $lr12
+nop/2
+# N法3回目
+fvmul $lr12 $lr12 $ls6
+nop/2
+fvmul $lm0 $ls6 $lr6
+nop/2
+fvfma $lr6 -$ln4 $ls4 $nowrite
+fvmul $mauf $lr12 $lr14
+nop/2
+# N法4回目
+fvmul $lr14 $lr14 $ls6
+nop/2
+fvmul $lm0 $ls6 $lr6
+nop/2
+fvfma $lr6 -$ln4 $ls4 $nowrite
+fvmul $mauf $lr14 $lr16
+nop/2
+# N法5回目
+fvmul $lr16 $lr16 $ls6
+nop/2
+fvmul $lm0 $ls6 $lr6
+nop/2
+fvfma $lr6 -$ln4 $ls4 $nowrite
+fvmul $mauf $lr16 $lr18
+
+
+
+d getf $lm0n0c0b0m0p0 2
+d getf $ln0n0c0b0m0p0 2
+d getf $lr0n0c0b0m0p0 10
+d getf $ls0n0c0b0m0p0 4

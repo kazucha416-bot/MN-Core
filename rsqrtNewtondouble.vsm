@@ -1,3 +1,4 @@
+# 倍精度ニュートンラフソン法の精度評価
 d set $lm0n0c0b0m0p0 7 3ff4cccccccccccd3f50624dd2f1a9fc3ff00000000000003ff00000000000003ff00000000000003ff00000000000003eb0c6f7a0b5ed8d
 d set $ln0n0c0b0m0p0 3 00000000000000003eb0c6f7a0b5ed8d3fe0000000000000
 d set $lr0n0c0b0m0p0 2 40100000000000004010000000000000
@@ -13,37 +14,7 @@ nop/2
 dvfmau $lr6 -$ln4 $ls4 $nowrite
 dvmulu $mauf $lr4 $lr4
 nop/2
-# N法1回目
-dvmulu $lr4 $lr4 $ls6
-nop/2
-dvmulu $lm0 $ls6 $lr6
-nop/2
-dvfmau $lr6 -$ln4 $ls4 $nowrite
-dvmulu $mauf $lr4 $lr4
-nop/2
-# N法1回目
-dvmulu $lr4 $lr4 $ls6
-nop/2
-dvmulu $lm0 $ls6 $lr6
-nop/2
-dvfmau $lr6 -$ln4 $ls4 $nowrite
-dvmulu $mauf $lr4 $lr4
-nop/2
-# N法1回目
-dvmulu $lr4 $lr4 $ls6
-nop/2
-dvmulu $lm0 $ls6 $lr6
-nop/2
-dvfmau $lr6 -$ln4 $ls4 $nowrite
-dvmulu $mauf $lr4 $lr4
-nop/2
-# N法1回目
-dvmulu $lr4 $lr4 $ls6
-nop/2
-dvmulu $lm0 $ls6 $lr6
-nop/2
-dvfmau $lr6 -$ln4 $ls4 $nowrite
-dvmulu $mauf $lr4 $lr4
+
 
 d getd $lm0n0c0b0m0p0 2
 d getd $ln0n0c0b0m0p0 2

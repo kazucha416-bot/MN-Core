@@ -1,0 +1,121 @@
+# LM0の値セット
+# 粒子0 
+d set $lm0n0c0b0m0p0 4 0000000000000000000000000000000000000000000000000000000000000000
+# 粒子1 
+d set $lm0n0c0b0m0p1 4 00000000000000003f800000000000003f800000000000000000000000000000
+# 粒子2
+d set $lm0n0c0b0m0p2 4 3f800000000000003f8000000000000000000000000000000000000000000000
+# 粒子3
+d set $lm0n0c0b0m0p3 4 3f8000000000000000000000000000003f800000000000000000000000000000
+
+# 粒子０の速度
+d set $ln0n0c0b0m0p0 4 3f1fe4aa00000000bf964a6f00000000bfa21d01000000000000000000000000
+# 粒子１の速度
+d set $ln0n0c0b0m0p1 4 bfd34656000000003fb4457300000000be841a15000000000000000000000000
+# 粒子２の速度
+d set $ln0n0c0b0m0p2 4 3ed2590b00000000bf2e91bc000000003fcf9ae3000000000000000000000000
+# 粒子３の速度
+d set $ln0n0c0b0m0p3 4 3f1d7b7e000000003ee5376e00000000bdc77504000000000000000000000000
+
+# ce,cf等係数の用意．後ほどこいつらが0番地に来るようにメモリ整理はします．．．
+imm f"4.0" $lr64v # ce12
+imm f"48.0" $lr72v # cf12
+imm f"4.0" $ls8v # ce06
+imm f"24.0" $ls16v # cf06
+# 座標回転命令を使ってポジションの差を求める
+# 1回転目
+msr $lm0v $ls0v
+nop
+fvadd $lm0v -$ls0v $lr0v
+# 2回転目
+msr $ls0v $ls0v
+nop
+fvadd $lm0v -$ls0v $lr8v
+# 3回転目
+msr $ls0v $ls0v
+nop
+fvadd $lm0v -$ls0v $lr16v
+
+# r^2を計算するために各要素の二乗を求める
+fvmul $lr0v $lr0v $lr[24,32,40,48]
+fvmul $lr8v $lr8v $lr[26,34,42,50]
+fvmul $lr16v $lr16v $lr[28,36,44,52]
+nop
+# 足し合わせてr^2が求まる ただし，lr同士のコンフリクトが起きてしまう．
+# こういう時passaを使うべきか，初めからlsを使うべきか．どちらがいいのだろうか．
+# 不安点はpassaの精度．完全に保たれるかどうかは不明．
+# Gemini曰く大丈夫らしいのでpassaを使うことにする．lsを併用するのは面倒なので．
+fvpassa $lr24v $nowrite
+fvadd $mauf $lr32v $nowrite
+fvadd $mauf $lr40v $lr48v
+nop
+# 次はニュートンラフソン法でr2iを求める
+frsqrt $lr48v $lr56v # lr56vに初期y0
+imm f"0.5" $ls0v # ls0vに0.5
+imm f"1.5" $ln8v # ln8vに1.5　のちのFMAの都合でlnに入れる必要あり
+fvmul $lr56v $lr56v $nowrite # y0^2
+fvmul $lr48v $mauf $nowrite # r2*y0^2
+fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y0^2
+fvmul $lr56v $mauf $lr56v # y1 = y0 * (1.5 - 0.5*r2*y0^2)
+nop
+# NR法2回目
+fvmul $lr56v $lr56v $nowrite # y1^2
+fvmul $lr48v $mauf $nowrite # r2*y1^2
+fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y1^2
+fvmul $lr56v $mauf $lr56v # y2 = y1 * (1.5 - 0.5*r2*y1^2)
+nop
+# NR法3回目
+fvmul $lr56v $lr56v $nowrite # y2^2
+fvmul $lr48v $mauf $nowrite # r2*y2^2
+fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y2^2
+fvmul $lr56v $mauf $lr56v # y3 = y2 * (1.5 - 0.5*r2*y2^2)
+nop
+# NR法4回目
+fvmul $lr56v $lr56v $nowrite # y3^2
+fvmul $lr48v $mauf $nowrite # r2*y3^2
+fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y3^2
+fvmul $lr56v $mauf $lr56v # y4 = y3 * (1.5 - 0.5*r2*y3^2)
+nop
+# r2i=y3^2をln8vに上書き格納
+fvmul $lr56v $lr56v $ln8v
+nop/2
+# r6iを求める = r2i^3 lnに格納する理由は，のちの計算時のコンフリクトを避けるため　これもなぁ，計算する直前にpassaすればいいのかなぁ．
+# Gemini曰く，のちの計算のためにメモリ配置をパズルのように解くのがいいらしい．passaは計算と同じように重いから．
+fvmul $ln8v $ln8v $nowrite
+fvmul $mauf $ln8v $nowrite
+fvpassa $mauf $ln16v
+nop/2
+# ep = ce12 * r12i - ce06 * r06iを求める
+fvfma $lr64v $ln16v -$ls8v $nowrite # ce12*r06i-ce06=nowrite
+fvmul $mauf $ln16v $lm8v # mauf * r06i = ep
+nop/2
+l1bmm@0 $lm8v $lb0 # この命令を使うとL1BMに12個のエネルギーが出力されるので，この合計を後ほど半分にすればよろしい．
+# メモリは12ずつ増やすとする．
+
+# fx,fy,fzを求める fx = fc * x 
+# ここが致命的に違う！！
+fvmul $ls24v $lr0v $ls32v # fx
+fvmul $ls24v $lr8v $ls40v # fy
+fvmul $ls24v $lr16v $ls48v # fz
+# 求めた力を足し合わせて，force1とする
+fvpassa $ls40v $nowrite
+fvadd $ls32v $mauf $nowrite
+fvadd $mauf $ls48v $ls56v # ls56vにforce1が入った メモリ整理は後ほどやるが，fcはここでしか使わないので上書き格納していいかも
+nop/2
+# 初期速度での運動エネルギーを求める
+fvmul $ln0v $ln0v $lr[0,8,16,24]
+nop
+fvpassa $lr8v $nowrite
+fvadd $lr0v $mauf $nowrite
+fvadd $lr16v $mauf $lr0v
+imm f"0.5" $nowrite # m/2
+fvmul $lr0v $aluf $lr0v # 運動エネルギー完成　lr0vに入る
+# L1BMに入っているポテンシャルエネルギーをL2BMに転送
+l2bm@0 $lb0 $lc0
+# 空になったL1BMに運動エネルギーを転送
+l1bmm@0 $lr0v $lb0
+
+d getf $lm0n0c0b0m0 16
+d getf $ln0n0c0b0m0 16
+d getf $lr0n0c0b0m0 64
+d getf $ls0n0c0b0m0 64

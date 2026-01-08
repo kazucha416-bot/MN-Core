@@ -89,21 +89,6 @@ fvfma $lr72v $ln16v -$ls16v $nowrite
 fvmul $mauf $ln16v $nowrite
 fvmul $mauf $ln8v $ls24v # fcがls24vに入る このあとlr0v~lr16vの座標と掛け算をするのでlsに格納
 nop
-#コード修正点．ls24vのfcを分配する．
-fvpassa $ls24 $ls32v
-fvpassa $ls26 $ls40v
-fvpassa $ls28 $ls48v
-# fx,fy,fzを求める fx = fc * x
-fvmul $ls32v $lr0v $ls[56,64,72,80] # fx
-fvmul $ls40v $lr8v $ls[58,66,74,82] # fy  
-fvmul $ls48v $lr16v $ls[60,68,76,84] # fz
-nop
-fvpassa $ls56v $nowrite
-fvadd $mauf $ls64v $nowrite
-fvadd $mauf $ls72v $ls56v # ls56vにforce1が入った
-
-
-
 # fx,fy,fzを求める fx = fc * x 
 # ここが致命的に違う！！
 fvmul $ls24v $lr0v $ls32v # fx
@@ -185,6 +170,12 @@ fvmul $lr56v $lr56v $nowrite # y2^2
 fvmul $lr48v $mauf $nowrite # r2*y2^2
 fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y2^2
 fvmul $lr56v $mauf $lr56v # y3 = y2 * (1.5 - 0.5*r2*y2^2)
+nop
+# NR法4回目
+fvmul $lr56v $lr56v $nowrite # y3^2
+fvmul $lr48v $mauf $nowrite # r2*y3^2
+fvfma $mauf -$ls0v $ln8v $nowrite # 1.5 - 0.5*r2*y3^2
+fvmul $lr56v $mauf $lr56v # y4 = y3 * (1.5 - 0.5*r2*y3^2)
 nop
 # r2i=y3^2をln8vに上書き格納
 fvmul $lr56v $lr56v $ln8v
@@ -1231,3 +1222,4 @@ l1bmm@0 $lr0v $lb36
 
 d getf $lb0n0c0b0 40
 d getf $lc0n0c0 160
+d getf $ls0n0c0b0m0 64
