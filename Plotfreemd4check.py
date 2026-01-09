@@ -3,8 +3,8 @@ import os
 
 def main():
     # --- 設定 ---
-    input_filename = 'freemd4result.txt'
-    output_filename = 'freemd4_mncore_finalresults.txt'
+    input_filename = '0109_freemd4_debug_result.txt'
+    output_filename = '0109_freemd4_mncore_finalresults.txt'
     dt = 0.001
     
     # 1ステップあたりのデータ行数構成

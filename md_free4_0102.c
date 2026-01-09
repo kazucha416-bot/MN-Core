@@ -4,7 +4,7 @@
 #include <time.h> // 乱数初期化用
 
 int num = 4; 
-int time_steps = 1000; // 変数名をtimeから変更（標準関数との衝突回避）
+int time_steps = 100; // 変数名をtimeから変更（標準関数との衝突回避）
 
 int main(void){
     // 毎回異なる乱数を生成するための初期化
@@ -185,7 +185,7 @@ int main(void){
     }
     
     FILE *e;
-    e = fopen("/home/kazuki/mncore/mdfree4_cpu_result_sameinitialvelocity.txt", "w");
+    e = fopen("/home/kazuki/mncore/mdfree4_cpu_result_0109_1.txt", "w");
     if (e == NULL) {
         printf("Error: Could not open file.\n");
         return 1;
