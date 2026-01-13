@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int num = 4; 
-int time = 2001;
+int time = 3001;
 
 int main(void){
     /* initial values */
@@ -197,7 +197,7 @@ int main(void){
     }
     
     FILE *e;
-    e = fopen("/home/kazuki/mncore/mdfree4_cpu_result_float.txt", "w");
+    e = fopen("/home/kazuki/mncore/0113mdfree4_cpu_result_float_3000.txt", "w");
     for(int k=0; k<time; k++){
         fprintf(e, "%f\t%f\t%f\t%f\n", dt*(float)k, engp_value[k], ke_value[k], total_value[k]);
     }

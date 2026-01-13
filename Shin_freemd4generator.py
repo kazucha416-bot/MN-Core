@@ -296,4 +296,4 @@ fvpassa $lr80v $ls56v # force2を次のforce1へ．
 if __name__ == "__main__":
     # 出力ファイル名とループ回数を指定
     # 例：500ステップ回して、50ステップごとにエネルギーを出力
-    generate_mncore_skeleton("Shin_Freemd4_MNCORE.vsm", loop_steps=2000, output_interval=10)
+    generate_mncore_skeleton("Shin_Freemd4_MNCORE.vsm", loop_steps=3000, output_interval=10)

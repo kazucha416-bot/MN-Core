@@ -12,8 +12,8 @@ def main():
         return
 
     # --- 設定 ---
-    input_filename = '0109_freemd4_debug_result.txt'
-    output_filename = '0109_freemd4_mncore_finalresults.txt'
+    input_filename = '0113mdfree4mncore3000result.txt'
+    output_filename = '0113mdfree4_mncore_3000results.txt'
     dt = 0.001
     
     # 1出力フレームあたりのデータ行数構成
