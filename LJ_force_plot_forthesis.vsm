@@ -1,0 +1,87 @@
+d set $lm0n0c0b0m0p0 1 4000000000000000
+d set $lr0n0c0b0m0p0 1 3fc0000000000000
+d set $ls0n0c0b0m0p0 2 3f0000000000000041c0000000000000
+
+
+frsqrt $lm0 $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2 # lr2 = 1/sqrt(x)
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $mauf $mauf $lr2 # lr2 = r2i
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $mauf $lr2 $lr4 # lr4 = r6i
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr4 -$ls2 $nowrite
+fvmul $mauf $lr4 $nowrite
+fvmul $mauf $lr2 $nowrite
+fvmul $mauf $lm0 $ln0
+
+d getf $lm0n0c0b0m0p0 4
+d getf $ln0n0c0b0m0p0 4
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+
+
+
+
+
+# 2週目　メモリを変えながらやってみる
+# lm2にデータをロード
+d set $lm2n0c0b0m0p0 1 4040000000000000
+frsqrt $lm2 $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6 # lr6 = 1/sqrt(x)
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $mauf $mauf $lr6 # lr6 = r2i
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $mauf $lr6 $lr8 # lr8 = r6i
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr8 -$ls2 $nowrite
+fvmul $mauf $lr8 $nowrite
+fvmul $mauf $lr6 $nowrite
+fvmul $mauf $lm2 $ln2
+
+d getf $lm2n0c0b0m0p0 4
+d getf $ln2n0c0b0m0p0 4

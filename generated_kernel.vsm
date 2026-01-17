@@ -1,0 +1,2019 @@
+d set $lm0n0c0b0m0p0 61 3f000000000000003f0a3d71000000003f147ae1000000003f1eb852000000003f28f5c3000000003f333333000000003f3d70a4000000003f47ae14000000003f51eb85000000003f5c28f6000000003f666666000000003f70a3d7000000003f7ae148000000003f828f5c000000003f87ae14000000003f8ccccd000000003f91eb85000000003f970a3d000000003f9c28f6000000003fa147ae000000003fa66666000000003fab851f000000003fb0a3d7000000003fb5c28f000000003fbae148000000003fc00000000000003fc51eb8000000003fca3d71000000003fcf5c29000000003fd47ae1000000003fd9999a000000003fdeb852000000003fe3d70a000000003fe8f5c3000000003fee147b000000003ff33333000000003ff851ec000000003ffd70a400000000400147ae000000004003d70a0000000040066666000000004008f5c300000000400b851f00000000400e147b000000004010a3d70000000040133333000000004015c28f00000000401851ec00000000401ae14800000000401d70a400000000402000000000000040228f5c0000000040251eb8000000004027ae1400000000402a3d7100000000402ccccd00000000402f5c29000000004031eb850000000040347ae10000000040370a3d000000004039999a00000000
+d set $lr0n0c0b0m0p0 1 3fc0000000000000
+d set $ls0n0c0b0m0p0 2 3f0000000000000041c0000000000000
+frsqrt $lm0 $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $lm0 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr2 $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $mauf $mauf $lr2
+nop/2
+fvmul $lr2 $lr2 $nowrite
+fvmul $mauf $lr2 $lr4
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr4 -$ls2 $nowrite
+fvmul $mauf $lr4 $nowrite
+fvmul $mauf $lr2 $nowrite
+fvmul $mauf $lm0 $ln0
+frsqrt $lm2 $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $lm2 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr6 $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $mauf $mauf $lr6
+nop/2
+fvmul $lr6 $lr6 $nowrite
+fvmul $mauf $lr6 $lr8
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr8 -$ls2 $nowrite
+fvmul $mauf $lr8 $nowrite
+fvmul $mauf $lr6 $nowrite
+fvmul $mauf $lm2 $ln2
+frsqrt $lm4 $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $lm4 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr10 $mauf $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $lm4 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr10 $mauf $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $lm4 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr10 $mauf $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $lm4 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr10 $mauf $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $mauf $mauf $lr10
+nop/2
+fvmul $lr10 $lr10 $nowrite
+fvmul $mauf $lr10 $lr12
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr12 -$ls2 $nowrite
+fvmul $mauf $lr12 $nowrite
+fvmul $mauf $lr10 $nowrite
+fvmul $mauf $lm4 $ln4
+frsqrt $lm6 $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $lm6 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr14 $mauf $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $lm6 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr14 $mauf $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $lm6 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr14 $mauf $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $lm6 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr14 $mauf $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $mauf $mauf $lr14
+nop/2
+fvmul $lr14 $lr14 $nowrite
+fvmul $mauf $lr14 $lr16
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr16 -$ls2 $nowrite
+fvmul $mauf $lr16 $nowrite
+fvmul $mauf $lr14 $nowrite
+fvmul $mauf $lm6 $ln6
+frsqrt $lm8 $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $lm8 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr18 $mauf $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $lm8 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr18 $mauf $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $lm8 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr18 $mauf $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $lm8 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr18 $mauf $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $mauf $mauf $lr18
+nop/2
+fvmul $lr18 $lr18 $nowrite
+fvmul $mauf $lr18 $lr20
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr20 -$ls2 $nowrite
+fvmul $mauf $lr20 $nowrite
+fvmul $mauf $lr18 $nowrite
+fvmul $mauf $lm8 $ln8
+frsqrt $lm10 $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $lm10 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr22 $mauf $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $lm10 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr22 $mauf $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $lm10 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr22 $mauf $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $lm10 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr22 $mauf $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $mauf $mauf $lr22
+nop/2
+fvmul $lr22 $lr22 $nowrite
+fvmul $mauf $lr22 $lr24
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr24 -$ls2 $nowrite
+fvmul $mauf $lr24 $nowrite
+fvmul $mauf $lr22 $nowrite
+fvmul $mauf $lm10 $ln10
+frsqrt $lm12 $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $lm12 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr26 $mauf $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $lm12 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr26 $mauf $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $lm12 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr26 $mauf $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $lm12 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr26 $mauf $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $mauf $mauf $lr26
+nop/2
+fvmul $lr26 $lr26 $nowrite
+fvmul $mauf $lr26 $lr28
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr28 -$ls2 $nowrite
+fvmul $mauf $lr28 $nowrite
+fvmul $mauf $lr26 $nowrite
+fvmul $mauf $lm12 $ln12
+frsqrt $lm14 $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $lm14 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr30 $mauf $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $lm14 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr30 $mauf $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $lm14 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr30 $mauf $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $lm14 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr30 $mauf $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $mauf $mauf $lr30
+nop/2
+fvmul $lr30 $lr30 $nowrite
+fvmul $mauf $lr30 $lr32
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr32 -$ls2 $nowrite
+fvmul $mauf $lr32 $nowrite
+fvmul $mauf $lr30 $nowrite
+fvmul $mauf $lm14 $ln14
+frsqrt $lm16 $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $lm16 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr34 $mauf $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $lm16 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr34 $mauf $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $lm16 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr34 $mauf $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $lm16 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr34 $mauf $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $mauf $mauf $lr34
+nop/2
+fvmul $lr34 $lr34 $nowrite
+fvmul $mauf $lr34 $lr36
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr36 -$ls2 $nowrite
+fvmul $mauf $lr36 $nowrite
+fvmul $mauf $lr34 $nowrite
+fvmul $mauf $lm16 $ln16
+frsqrt $lm18 $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $lm18 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr38 $mauf $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $lm18 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr38 $mauf $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $lm18 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr38 $mauf $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $lm18 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr38 $mauf $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $mauf $mauf $lr38
+nop/2
+fvmul $lr38 $lr38 $nowrite
+fvmul $mauf $lr38 $lr40
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr40 -$ls2 $nowrite
+fvmul $mauf $lr40 $nowrite
+fvmul $mauf $lr38 $nowrite
+fvmul $mauf $lm18 $ln18
+frsqrt $lm20 $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $lm20 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr42 $mauf $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $lm20 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr42 $mauf $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $lm20 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr42 $mauf $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $lm20 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr42 $mauf $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $mauf $mauf $lr42
+nop/2
+fvmul $lr42 $lr42 $nowrite
+fvmul $mauf $lr42 $lr44
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr44 -$ls2 $nowrite
+fvmul $mauf $lr44 $nowrite
+fvmul $mauf $lr42 $nowrite
+fvmul $mauf $lm20 $ln20
+frsqrt $lm22 $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $lm22 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr46 $mauf $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $lm22 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr46 $mauf $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $lm22 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr46 $mauf $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $lm22 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr46 $mauf $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $mauf $mauf $lr46
+nop/2
+fvmul $lr46 $lr46 $nowrite
+fvmul $mauf $lr46 $lr48
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr48 -$ls2 $nowrite
+fvmul $mauf $lr48 $nowrite
+fvmul $mauf $lr46 $nowrite
+fvmul $mauf $lm22 $ln22
+frsqrt $lm24 $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $lm24 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr50 $mauf $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $lm24 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr50 $mauf $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $lm24 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr50 $mauf $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $lm24 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr50 $mauf $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $mauf $mauf $lr50
+nop/2
+fvmul $lr50 $lr50 $nowrite
+fvmul $mauf $lr50 $lr52
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr52 -$ls2 $nowrite
+fvmul $mauf $lr52 $nowrite
+fvmul $mauf $lr50 $nowrite
+fvmul $mauf $lm24 $ln24
+frsqrt $lm26 $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $lm26 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr54 $mauf $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $lm26 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr54 $mauf $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $lm26 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr54 $mauf $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $lm26 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr54 $mauf $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $mauf $mauf $lr54
+nop/2
+fvmul $lr54 $lr54 $nowrite
+fvmul $mauf $lr54 $lr56
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr56 -$ls2 $nowrite
+fvmul $mauf $lr56 $nowrite
+fvmul $mauf $lr54 $nowrite
+fvmul $mauf $lm26 $ln26
+frsqrt $lm28 $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $lm28 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr58 $mauf $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $lm28 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr58 $mauf $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $lm28 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr58 $mauf $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $lm28 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr58 $mauf $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $mauf $mauf $lr58
+nop/2
+fvmul $lr58 $lr58 $nowrite
+fvmul $mauf $lr58 $lr60
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr60 -$ls2 $nowrite
+fvmul $mauf $lr60 $nowrite
+fvmul $mauf $lr58 $nowrite
+fvmul $mauf $lm28 $ln28
+frsqrt $lm30 $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $lm30 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr62 $mauf $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $lm30 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr62 $mauf $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $lm30 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr62 $mauf $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $lm30 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr62 $mauf $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $mauf $mauf $lr62
+nop/2
+fvmul $lr62 $lr62 $nowrite
+fvmul $mauf $lr62 $lr64
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr64 -$ls2 $nowrite
+fvmul $mauf $lr64 $nowrite
+fvmul $mauf $lr62 $nowrite
+fvmul $mauf $lm30 $ln30
+frsqrt $lm32 $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $lm32 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr66 $mauf $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $lm32 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr66 $mauf $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $lm32 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr66 $mauf $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $lm32 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr66 $mauf $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $mauf $mauf $lr66
+nop/2
+fvmul $lr66 $lr66 $nowrite
+fvmul $mauf $lr66 $lr68
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr68 -$ls2 $nowrite
+fvmul $mauf $lr68 $nowrite
+fvmul $mauf $lr66 $nowrite
+fvmul $mauf $lm32 $ln32
+frsqrt $lm34 $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $lm34 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr70 $mauf $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $lm34 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr70 $mauf $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $lm34 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr70 $mauf $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $lm34 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr70 $mauf $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $mauf $mauf $lr70
+nop/2
+fvmul $lr70 $lr70 $nowrite
+fvmul $mauf $lr70 $lr72
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr72 -$ls2 $nowrite
+fvmul $mauf $lr72 $nowrite
+fvmul $mauf $lr70 $nowrite
+fvmul $mauf $lm34 $ln34
+frsqrt $lm36 $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $lm36 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr74 $mauf $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $lm36 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr74 $mauf $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $lm36 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr74 $mauf $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $lm36 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr74 $mauf $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $mauf $mauf $lr74
+nop/2
+fvmul $lr74 $lr74 $nowrite
+fvmul $mauf $lr74 $lr76
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr76 -$ls2 $nowrite
+fvmul $mauf $lr76 $nowrite
+fvmul $mauf $lr74 $nowrite
+fvmul $mauf $lm36 $ln36
+frsqrt $lm38 $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $lm38 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr78 $mauf $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $lm38 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr78 $mauf $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $lm38 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr78 $mauf $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $lm38 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr78 $mauf $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $mauf $mauf $lr78
+nop/2
+fvmul $lr78 $lr78 $nowrite
+fvmul $mauf $lr78 $lr80
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr80 -$ls2 $nowrite
+fvmul $mauf $lr80 $nowrite
+fvmul $mauf $lr78 $nowrite
+fvmul $mauf $lm38 $ln38
+frsqrt $lm40 $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $lm40 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr82 $mauf $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $lm40 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr82 $mauf $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $lm40 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr82 $mauf $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $lm40 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr82 $mauf $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $mauf $mauf $lr82
+nop/2
+fvmul $lr82 $lr82 $nowrite
+fvmul $mauf $lr82 $lr84
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr84 -$ls2 $nowrite
+fvmul $mauf $lr84 $nowrite
+fvmul $mauf $lr82 $nowrite
+fvmul $mauf $lm40 $ln40
+frsqrt $lm42 $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $lm42 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr86 $mauf $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $lm42 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr86 $mauf $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $lm42 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr86 $mauf $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $lm42 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr86 $mauf $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $mauf $mauf $lr86
+nop/2
+fvmul $lr86 $lr86 $nowrite
+fvmul $mauf $lr86 $lr88
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr88 -$ls2 $nowrite
+fvmul $mauf $lr88 $nowrite
+fvmul $mauf $lr86 $nowrite
+fvmul $mauf $lm42 $ln42
+frsqrt $lm44 $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $lm44 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr90 $mauf $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $lm44 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr90 $mauf $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $lm44 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr90 $mauf $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $lm44 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr90 $mauf $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $mauf $mauf $lr90
+nop/2
+fvmul $lr90 $lr90 $nowrite
+fvmul $mauf $lr90 $lr92
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr92 -$ls2 $nowrite
+fvmul $mauf $lr92 $nowrite
+fvmul $mauf $lr90 $nowrite
+fvmul $mauf $lm44 $ln44
+frsqrt $lm46 $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $lm46 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr94 $mauf $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $lm46 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr94 $mauf $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $lm46 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr94 $mauf $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $lm46 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr94 $mauf $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $mauf $mauf $lr94
+nop/2
+fvmul $lr94 $lr94 $nowrite
+fvmul $mauf $lr94 $lr96
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr96 -$ls2 $nowrite
+fvmul $mauf $lr96 $nowrite
+fvmul $mauf $lr94 $nowrite
+fvmul $mauf $lm46 $ln46
+frsqrt $lm48 $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $lm48 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr98 $mauf $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $lm48 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr98 $mauf $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $lm48 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr98 $mauf $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $lm48 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr98 $mauf $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $mauf $mauf $lr98
+nop/2
+fvmul $lr98 $lr98 $nowrite
+fvmul $mauf $lr98 $lr100
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr100 -$ls2 $nowrite
+fvmul $mauf $lr100 $nowrite
+fvmul $mauf $lr98 $nowrite
+fvmul $mauf $lm48 $ln48
+frsqrt $lm50 $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $lm50 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr102 $mauf $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $lm50 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr102 $mauf $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $lm50 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr102 $mauf $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $lm50 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr102 $mauf $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $mauf $mauf $lr102
+nop/2
+fvmul $lr102 $lr102 $nowrite
+fvmul $mauf $lr102 $lr104
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr104 -$ls2 $nowrite
+fvmul $mauf $lr104 $nowrite
+fvmul $mauf $lr102 $nowrite
+fvmul $mauf $lm50 $ln50
+frsqrt $lm52 $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $lm52 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr106 $mauf $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $lm52 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr106 $mauf $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $lm52 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr106 $mauf $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $lm52 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr106 $mauf $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $mauf $mauf $lr106
+nop/2
+fvmul $lr106 $lr106 $nowrite
+fvmul $mauf $lr106 $lr108
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr108 -$ls2 $nowrite
+fvmul $mauf $lr108 $nowrite
+fvmul $mauf $lr106 $nowrite
+fvmul $mauf $lm52 $ln52
+frsqrt $lm54 $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $lm54 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr110 $mauf $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $lm54 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr110 $mauf $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $lm54 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr110 $mauf $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $lm54 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr110 $mauf $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $mauf $mauf $lr110
+nop/2
+fvmul $lr110 $lr110 $nowrite
+fvmul $mauf $lr110 $lr112
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr112 -$ls2 $nowrite
+fvmul $mauf $lr112 $nowrite
+fvmul $mauf $lr110 $nowrite
+fvmul $mauf $lm54 $ln54
+frsqrt $lm56 $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $lm56 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr114 $mauf $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $lm56 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr114 $mauf $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $lm56 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr114 $mauf $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $lm56 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr114 $mauf $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $mauf $mauf $lr114
+nop/2
+fvmul $lr114 $lr114 $nowrite
+fvmul $mauf $lr114 $lr116
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr116 -$ls2 $nowrite
+fvmul $mauf $lr116 $nowrite
+fvmul $mauf $lr114 $nowrite
+fvmul $mauf $lm56 $ln56
+frsqrt $lm58 $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $lm58 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr118 $mauf $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $lm58 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr118 $mauf $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $lm58 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr118 $mauf $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $lm58 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr118 $mauf $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $mauf $mauf $lr118
+nop/2
+fvmul $lr118 $lr118 $nowrite
+fvmul $mauf $lr118 $lr120
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr120 -$ls2 $nowrite
+fvmul $mauf $lr120 $nowrite
+fvmul $mauf $lr118 $nowrite
+fvmul $mauf $lm58 $ln58
+frsqrt $lm60 $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $lm60 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr122 $mauf $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $lm60 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr122 $mauf $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $lm60 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr122 $mauf $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $lm60 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr122 $mauf $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $mauf $mauf $lr122
+nop/2
+fvmul $lr122 $lr122 $nowrite
+fvmul $mauf $lr122 $lr124
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr124 -$ls2 $nowrite
+fvmul $mauf $lr124 $nowrite
+fvmul $mauf $lr122 $nowrite
+fvmul $mauf $lm60 $ln60
+frsqrt $lm62 $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $lm62 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr126 $mauf $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $lm62 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr126 $mauf $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $lm62 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr126 $mauf $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $lm62 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr126 $mauf $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $mauf $mauf $lr126
+nop/2
+fvmul $lr126 $lr126 $nowrite
+fvmul $mauf $lr126 $lr128
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr128 -$ls2 $nowrite
+fvmul $mauf $lr128 $nowrite
+fvmul $mauf $lr126 $nowrite
+fvmul $mauf $lm62 $ln62
+frsqrt $lm64 $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $lm64 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr130 $mauf $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $lm64 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr130 $mauf $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $lm64 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr130 $mauf $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $lm64 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr130 $mauf $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $mauf $mauf $lr130
+nop/2
+fvmul $lr130 $lr130 $nowrite
+fvmul $mauf $lr130 $lr132
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr132 -$ls2 $nowrite
+fvmul $mauf $lr132 $nowrite
+fvmul $mauf $lr130 $nowrite
+fvmul $mauf $lm64 $ln64
+frsqrt $lm66 $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $lm66 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr134 $mauf $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $lm66 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr134 $mauf $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $lm66 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr134 $mauf $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $lm66 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr134 $mauf $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $mauf $mauf $lr134
+nop/2
+fvmul $lr134 $lr134 $nowrite
+fvmul $mauf $lr134 $lr136
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr136 -$ls2 $nowrite
+fvmul $mauf $lr136 $nowrite
+fvmul $mauf $lr134 $nowrite
+fvmul $mauf $lm66 $ln66
+frsqrt $lm68 $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $lm68 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr138 $mauf $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $lm68 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr138 $mauf $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $lm68 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr138 $mauf $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $lm68 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr138 $mauf $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $mauf $mauf $lr138
+nop/2
+fvmul $lr138 $lr138 $nowrite
+fvmul $mauf $lr138 $lr140
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr140 -$ls2 $nowrite
+fvmul $mauf $lr140 $nowrite
+fvmul $mauf $lr138 $nowrite
+fvmul $mauf $lm68 $ln68
+frsqrt $lm70 $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $lm70 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr142 $mauf $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $lm70 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr142 $mauf $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $lm70 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr142 $mauf $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $lm70 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr142 $mauf $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $mauf $mauf $lr142
+nop/2
+fvmul $lr142 $lr142 $nowrite
+fvmul $mauf $lr142 $lr144
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr144 -$ls2 $nowrite
+fvmul $mauf $lr144 $nowrite
+fvmul $mauf $lr142 $nowrite
+fvmul $mauf $lm70 $ln70
+frsqrt $lm72 $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $lm72 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr146 $mauf $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $lm72 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr146 $mauf $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $lm72 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr146 $mauf $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $lm72 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr146 $mauf $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $mauf $mauf $lr146
+nop/2
+fvmul $lr146 $lr146 $nowrite
+fvmul $mauf $lr146 $lr148
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr148 -$ls2 $nowrite
+fvmul $mauf $lr148 $nowrite
+fvmul $mauf $lr146 $nowrite
+fvmul $mauf $lm72 $ln72
+frsqrt $lm74 $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $lm74 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr150 $mauf $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $lm74 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr150 $mauf $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $lm74 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr150 $mauf $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $lm74 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr150 $mauf $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $mauf $mauf $lr150
+nop/2
+fvmul $lr150 $lr150 $nowrite
+fvmul $mauf $lr150 $lr152
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr152 -$ls2 $nowrite
+fvmul $mauf $lr152 $nowrite
+fvmul $mauf $lr150 $nowrite
+fvmul $mauf $lm74 $ln74
+frsqrt $lm76 $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $lm76 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr154 $mauf $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $lm76 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr154 $mauf $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $lm76 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr154 $mauf $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $lm76 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr154 $mauf $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $mauf $mauf $lr154
+nop/2
+fvmul $lr154 $lr154 $nowrite
+fvmul $mauf $lr154 $lr156
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr156 -$ls2 $nowrite
+fvmul $mauf $lr156 $nowrite
+fvmul $mauf $lr154 $nowrite
+fvmul $mauf $lm76 $ln76
+frsqrt $lm78 $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $lm78 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr158 $mauf $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $lm78 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr158 $mauf $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $lm78 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr158 $mauf $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $lm78 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr158 $mauf $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $mauf $mauf $lr158
+nop/2
+fvmul $lr158 $lr158 $nowrite
+fvmul $mauf $lr158 $lr160
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr160 -$ls2 $nowrite
+fvmul $mauf $lr160 $nowrite
+fvmul $mauf $lr158 $nowrite
+fvmul $mauf $lm78 $ln78
+frsqrt $lm80 $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $lm80 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr162 $mauf $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $lm80 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr162 $mauf $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $lm80 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr162 $mauf $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $lm80 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr162 $mauf $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $mauf $mauf $lr162
+nop/2
+fvmul $lr162 $lr162 $nowrite
+fvmul $mauf $lr162 $lr164
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr164 -$ls2 $nowrite
+fvmul $mauf $lr164 $nowrite
+fvmul $mauf $lr162 $nowrite
+fvmul $mauf $lm80 $ln80
+frsqrt $lm82 $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $lm82 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr166 $mauf $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $lm82 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr166 $mauf $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $lm82 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr166 $mauf $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $lm82 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr166 $mauf $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $mauf $mauf $lr166
+nop/2
+fvmul $lr166 $lr166 $nowrite
+fvmul $mauf $lr166 $lr168
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr168 -$ls2 $nowrite
+fvmul $mauf $lr168 $nowrite
+fvmul $mauf $lr166 $nowrite
+fvmul $mauf $lm82 $ln82
+frsqrt $lm84 $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $lm84 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr170 $mauf $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $lm84 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr170 $mauf $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $lm84 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr170 $mauf $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $lm84 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr170 $mauf $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $mauf $mauf $lr170
+nop/2
+fvmul $lr170 $lr170 $nowrite
+fvmul $mauf $lr170 $lr172
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr172 -$ls2 $nowrite
+fvmul $mauf $lr172 $nowrite
+fvmul $mauf $lr170 $nowrite
+fvmul $mauf $lm84 $ln84
+frsqrt $lm86 $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $lm86 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr174 $mauf $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $lm86 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr174 $mauf $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $lm86 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr174 $mauf $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $lm86 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr174 $mauf $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $mauf $mauf $lr174
+nop/2
+fvmul $lr174 $lr174 $nowrite
+fvmul $mauf $lr174 $lr176
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr176 -$ls2 $nowrite
+fvmul $mauf $lr176 $nowrite
+fvmul $mauf $lr174 $nowrite
+fvmul $mauf $lm86 $ln86
+frsqrt $lm88 $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $lm88 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr178 $mauf $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $lm88 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr178 $mauf $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $lm88 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr178 $mauf $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $lm88 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr178 $mauf $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $mauf $mauf $lr178
+nop/2
+fvmul $lr178 $lr178 $nowrite
+fvmul $mauf $lr178 $lr180
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr180 -$ls2 $nowrite
+fvmul $mauf $lr180 $nowrite
+fvmul $mauf $lr178 $nowrite
+fvmul $mauf $lm88 $ln88
+frsqrt $lm90 $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $lm90 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr182 $mauf $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $lm90 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr182 $mauf $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $lm90 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr182 $mauf $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $lm90 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr182 $mauf $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $mauf $mauf $lr182
+nop/2
+fvmul $lr182 $lr182 $nowrite
+fvmul $mauf $lr182 $lr184
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr184 -$ls2 $nowrite
+fvmul $mauf $lr184 $nowrite
+fvmul $mauf $lr182 $nowrite
+fvmul $mauf $lm90 $ln90
+frsqrt $lm92 $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $lm92 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr186 $mauf $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $lm92 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr186 $mauf $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $lm92 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr186 $mauf $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $lm92 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr186 $mauf $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $mauf $mauf $lr186
+nop/2
+fvmul $lr186 $lr186 $nowrite
+fvmul $mauf $lr186 $lr188
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr188 -$ls2 $nowrite
+fvmul $mauf $lr188 $nowrite
+fvmul $mauf $lr186 $nowrite
+fvmul $mauf $lm92 $ln92
+frsqrt $lm94 $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $lm94 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr190 $mauf $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $lm94 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr190 $mauf $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $lm94 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr190 $mauf $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $lm94 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr190 $mauf $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $mauf $mauf $lr190
+nop/2
+fvmul $lr190 $lr190 $nowrite
+fvmul $mauf $lr190 $lr192
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr192 -$ls2 $nowrite
+fvmul $mauf $lr192 $nowrite
+fvmul $mauf $lr190 $nowrite
+fvmul $mauf $lm94 $ln94
+frsqrt $lm96 $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $lm96 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr194 $mauf $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $lm96 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr194 $mauf $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $lm96 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr194 $mauf $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $lm96 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr194 $mauf $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $mauf $mauf $lr194
+nop/2
+fvmul $lr194 $lr194 $nowrite
+fvmul $mauf $lr194 $lr196
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr196 -$ls2 $nowrite
+fvmul $mauf $lr196 $nowrite
+fvmul $mauf $lr194 $nowrite
+fvmul $mauf $lm96 $ln96
+frsqrt $lm98 $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $lm98 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr198 $mauf $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $lm98 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr198 $mauf $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $lm98 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr198 $mauf $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $lm98 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr198 $mauf $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $mauf $mauf $lr198
+nop/2
+fvmul $lr198 $lr198 $nowrite
+fvmul $mauf $lr198 $lr200
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr200 -$ls2 $nowrite
+fvmul $mauf $lr200 $nowrite
+fvmul $mauf $lr198 $nowrite
+fvmul $mauf $lm98 $ln98
+frsqrt $lm100 $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $lm100 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr202 $mauf $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $lm100 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr202 $mauf $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $lm100 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr202 $mauf $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $lm100 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr202 $mauf $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $mauf $mauf $lr202
+nop/2
+fvmul $lr202 $lr202 $nowrite
+fvmul $mauf $lr202 $lr204
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr204 -$ls2 $nowrite
+fvmul $mauf $lr204 $nowrite
+fvmul $mauf $lr202 $nowrite
+fvmul $mauf $lm100 $ln100
+frsqrt $lm102 $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $lm102 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr206 $mauf $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $lm102 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr206 $mauf $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $lm102 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr206 $mauf $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $lm102 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr206 $mauf $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $mauf $mauf $lr206
+nop/2
+fvmul $lr206 $lr206 $nowrite
+fvmul $mauf $lr206 $lr208
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr208 -$ls2 $nowrite
+fvmul $mauf $lr208 $nowrite
+fvmul $mauf $lr206 $nowrite
+fvmul $mauf $lm102 $ln102
+frsqrt $lm104 $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $lm104 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr210 $mauf $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $lm104 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr210 $mauf $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $lm104 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr210 $mauf $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $lm104 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr210 $mauf $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $mauf $mauf $lr210
+nop/2
+fvmul $lr210 $lr210 $nowrite
+fvmul $mauf $lr210 $lr212
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr212 -$ls2 $nowrite
+fvmul $mauf $lr212 $nowrite
+fvmul $mauf $lr210 $nowrite
+fvmul $mauf $lm104 $ln104
+frsqrt $lm106 $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $lm106 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr214 $mauf $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $lm106 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr214 $mauf $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $lm106 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr214 $mauf $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $lm106 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr214 $mauf $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $mauf $mauf $lr214
+nop/2
+fvmul $lr214 $lr214 $nowrite
+fvmul $mauf $lr214 $lr216
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr216 -$ls2 $nowrite
+fvmul $mauf $lr216 $nowrite
+fvmul $mauf $lr214 $nowrite
+fvmul $mauf $lm106 $ln106
+frsqrt $lm108 $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $lm108 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr218 $mauf $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $lm108 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr218 $mauf $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $lm108 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr218 $mauf $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $lm108 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr218 $mauf $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $mauf $mauf $lr218
+nop/2
+fvmul $lr218 $lr218 $nowrite
+fvmul $mauf $lr218 $lr220
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr220 -$ls2 $nowrite
+fvmul $mauf $lr220 $nowrite
+fvmul $mauf $lr218 $nowrite
+fvmul $mauf $lm108 $ln108
+frsqrt $lm110 $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $lm110 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr222 $mauf $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $lm110 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr222 $mauf $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $lm110 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr222 $mauf $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $lm110 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr222 $mauf $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $mauf $mauf $lr222
+nop/2
+fvmul $lr222 $lr222 $nowrite
+fvmul $mauf $lr222 $lr224
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr224 -$ls2 $nowrite
+fvmul $mauf $lr224 $nowrite
+fvmul $mauf $lr222 $nowrite
+fvmul $mauf $lm110 $ln110
+frsqrt $lm112 $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $lm112 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr226 $mauf $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $lm112 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr226 $mauf $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $lm112 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr226 $mauf $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $lm112 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr226 $mauf $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $mauf $mauf $lr226
+nop/2
+fvmul $lr226 $lr226 $nowrite
+fvmul $mauf $lr226 $lr228
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr228 -$ls2 $nowrite
+fvmul $mauf $lr228 $nowrite
+fvmul $mauf $lr226 $nowrite
+fvmul $mauf $lm112 $ln112
+frsqrt $lm114 $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $lm114 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr230 $mauf $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $lm114 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr230 $mauf $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $lm114 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr230 $mauf $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $lm114 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr230 $mauf $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $mauf $mauf $lr230
+nop/2
+fvmul $lr230 $lr230 $nowrite
+fvmul $mauf $lr230 $lr232
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr232 -$ls2 $nowrite
+fvmul $mauf $lr232 $nowrite
+fvmul $mauf $lr230 $nowrite
+fvmul $mauf $lm114 $ln114
+frsqrt $lm116 $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $lm116 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr234 $mauf $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $lm116 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr234 $mauf $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $lm116 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr234 $mauf $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $lm116 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr234 $mauf $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $mauf $mauf $lr234
+nop/2
+fvmul $lr234 $lr234 $nowrite
+fvmul $mauf $lr234 $lr236
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr236 -$ls2 $nowrite
+fvmul $mauf $lr236 $nowrite
+fvmul $mauf $lr234 $nowrite
+fvmul $mauf $lm116 $ln116
+frsqrt $lm118 $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $lm118 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr238 $mauf $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $lm118 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr238 $mauf $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $lm118 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr238 $mauf $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $lm118 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr238 $mauf $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $mauf $mauf $lr238
+nop/2
+fvmul $lr238 $lr238 $nowrite
+fvmul $mauf $lr238 $lr240
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr240 -$ls2 $nowrite
+fvmul $mauf $lr240 $nowrite
+fvmul $mauf $lr238 $nowrite
+fvmul $mauf $lm118 $ln118
+frsqrt $lm120 $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $lm120 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr242 $mauf $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $lm120 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr242 $mauf $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $lm120 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr242 $mauf $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $lm120 $mauf $nowrite
+fvfma $mauf -$ls0 $lr0 $nowrite
+fvmul $lr242 $mauf $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $mauf $mauf $lr242
+nop/2
+fvmul $lr242 $lr242 $nowrite
+fvmul $mauf $lr242 $lr244
+nop
+imm f"48.0" $nowrite
+fvfma $aluf $lr244 -$ls2 $nowrite
+fvmul $mauf $lr244 $nowrite
+fvmul $mauf $lr242 $nowrite
+fvmul $mauf $lm120 $ln120
+
+d getf $lm0n0c0b0m0p0 61
+d getf $ln0n0c0b0m0p0 61
