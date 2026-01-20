@@ -1,3 +1,4 @@
+import os
 import re
 import struct
 import numpy as np
@@ -69,13 +70,8 @@ if not df.empty:
     # --- プロット設定 ---
     plt.figure(figsize=(10, 8))
     
-    # ★変更点: マーカーを星型(*)、色を青(blue)、塗りつぶしあり
-    plt.scatter(x_data, y_data, s=60, marker='o', c='blue', edgecolors='none', label='MN-Core (Single) Error')
+    plt.scatter(x_data, y_data, s=40, marker='o', c='blue', edgecolors='none')
     
-    # ★変更点: 赤線を削除 (倍精度のガイドラインだけ残す場合はこちら)
-    # plt.axhline(1.19e-7, color='red', linestyle='--', linewidth=1.5, label=r'Single Precision $\epsilon$') 
-    plt.axhline(1e-15, color='gray', linestyle=':', linewidth=1, label=r'Double Precision $\epsilon \approx 10^{-15}$')
-
     # 画角設定 (中央に寄せるための広角設定)
     plt.xlim(1e-5, 1e10)
     plt.ylim(1e-11, 1e-3)
@@ -83,21 +79,29 @@ if not df.empty:
     plt.xscale('log')
     plt.yscale('log')
     
-    plt.xlabel(r'Force Magnitude $|F_{\mathrm{CPU}}|$', fontsize=16)
-    plt.ylabel(r'Relative Error $|F_{\mathrm{MN}} - F_{\mathrm{CPU}}| / |F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.xlabel(r'Absolute force of CPU $|F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.ylabel(r'Relative error $|F_{\mathrm{MN}} - F_{\mathrm{CPU}}| / |F_{\mathrm{CPU}}|$', fontsize=16)
     
     # ★変更点: タイトル削除
     # plt.title('MN-Core Accuracy', fontsize=16)
     
     plt.tick_params(labelsize=14)
     plt.grid(True, which="both", linestyle=':', alpha=0.6)
-    plt.legend(fontsize=14, loc='upper right')
+    # plt.legend(fontsize=14, loc='upper right')
     
     plt.tight_layout()
-    output_file = 'Force_Error_Scatter_Final.pdf'
-    plt.savefig(output_file)
-    print(f"Graph saved: {output_file}")
+    # --- 保存先の変更 ---
+    save_dir = r'/home/kazuki/thesis/images' # 指定された保存先ディレクトリ
     
+    # もしディレクトリが存在しなければ作成する（念のため）
+    os.makedirs(save_dir, exist_ok=True)
+    
+    # パスを結合して保存
+    output_filename = 'Force_Error_Scatter_Float.pdf'
+    output_path = os.path.join(save_dir, output_filename)
+    
+    plt.savefig(output_path)
+    print(f"Graph saved: {output_path}")
     # plt.show()
 else:
     print("No data found.")
