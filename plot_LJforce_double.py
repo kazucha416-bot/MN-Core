@@ -81,17 +81,17 @@ if not df.empty:
     plt.figure(figsize=(10, 8))
     
     # マーカー: 青い丸 ('o')
-    plt.scatter(x_data, y_data, s=40, marker='o', c='blue', edgecolors='none')
+    plt.scatter(x_data, y_data, s=100, marker='o', c='blue', edgecolors='none')
     
     # --- 画角の調整 (倍精度用に変更) ---
-    plt.xlim(1e-5, 1e10)
-    plt.ylim(1e-18, 1e-10)
+    plt.xlim(1e-3, 1e7)
+    plt.ylim(1e-16, 1e-13)
 
     plt.xscale('log')
     plt.yscale('log')
     
-    plt.xlabel(r'Absolute force of CPU $|F_{\mathrm{CPU}}|$', fontsize=16)
-    plt.ylabel(r'Relative error $|F_{\mathrm{MN-Core 2}} - F_{\mathrm{CPU}}|  /  |F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.xlabel(r'$|F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.ylabel(r'$\delta$', fontsize=16)
     
     plt.tick_params(labelsize=14)
     plt.grid(True, which="both", linestyle=':', alpha=0.6)

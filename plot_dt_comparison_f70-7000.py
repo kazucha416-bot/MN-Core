@@ -1,3 +1,5 @@
+# シンプレクティックEuler法の異なる時間刻み幅によるエネルギー保存性の比較グラフを作成するスクリプト
+# ファイル名: plot_dt_comparison_f70-7000.py
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -49,7 +51,7 @@ for config in files_config:
         # プロット
         ax.plot(time_axis, energy, 
                 label=config['label'], 
-                linewidth=3.0,  # 線も太く
+                linewidth=2.5,  
                 alpha=0.8)
         
         print(f"'{filename}' をプロットしました。")
@@ -62,11 +64,11 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 # ★修正2: 文字サイズを超特大に
-ax.set_xlabel('Time (s)', fontsize=28)
-ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
+ax.set_xlabel('Time [s]', fontsize=16)
+ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
 
 # 目盛りの数字
-ax.tick_params(axis='both', labelsize=22)
+ax.tick_params(axis='both', labelsize=16)
 
 # グリッド
 ax.grid(True, which='both', linestyle='--', alpha=0.7)

@@ -1,0 +1,10591 @@
+imm f"0.01" $nowrite
+lpassa $aluf $lm0v #h=0.1
+imm f"0" $lr0v #v0=0
+imm f"1.0" $ls0v #x0=1.0
+imm f"0.005" $nowrite
+lpassa $aluf $lm8v #hk/2m=0.1
+imm f"0.99995" $nowrite
+lpassa $aluf $lm16v #1-kh^2/2m=0.995
+imm f"0.5" $nowrite
+lpassa $aluf $lm32v
+imm f"1" $nowrite
+lpassa $aluf $ln0v
+d getf $lm0n0c0b0m0p0 17
+d getf $ln0n0c0b0m0p0 4
+d getf $lr0n0c0b0m0p0 4
+d getf $ls0n0c0b0m0p0 4
+nop
+nop
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(10)
+nop/2
+l1bmm@0 $ls20v $lb4
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(20)
+nop/2
+l1bmm@0 $ls20v $lb8
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(30)
+nop/2
+l1bmm@0 $ls20v $lb12
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(40)
+nop/2
+l1bmm@0 $ls20v $lb16
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(50)
+nop/2
+l1bmm@0 $ls20v $lb20
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(60)
+nop/2
+l1bmm@0 $ls20v $lb24
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(70)
+nop/2
+l1bmm@0 $ls20v $lb28
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(80)
+nop/2
+l1bmm@0 $ls20v $lb32
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(90)
+nop/2
+l1bmm@0 $ls20v $lb36
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(100)
+nop/2
+l1bmm@0 $ls20v $lb40
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(110)
+nop/2
+l1bmm@0 $ls20v $lb44
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(120)
+nop/2
+l1bmm@0 $ls20v $lb48
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(130)
+nop/2
+l1bmm@0 $ls20v $lb52
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(140)
+nop/2
+l1bmm@0 $ls20v $lb56
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(150)
+nop/2
+l1bmm@0 $ls20v $lb60
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(160)
+nop/2
+l1bmm@0 $ls20v $lb64
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(170)
+nop/2
+l1bmm@0 $ls20v $lb68
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(180)
+nop/2
+l1bmm@0 $ls20v $lb72
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(190)
+nop/2
+l1bmm@0 $ls20v $lb76
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(200)
+nop/2
+l1bmm@0 $ls20v $lb80
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(210)
+nop/2
+l1bmm@0 $ls20v $lb84
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(220)
+nop/2
+l1bmm@0 $ls20v $lb88
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(230)
+nop/2
+l1bmm@0 $ls20v $lb92
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(240)
+nop/2
+l1bmm@0 $ls20v $lb96
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(250)
+nop/2
+l1bmm@0 $ls20v $lb100
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(260)
+nop/2
+l1bmm@0 $ls20v $lb104
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(270)
+nop/2
+l1bmm@0 $ls20v $lb108
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(280)
+nop/2
+l1bmm@0 $ls20v $lb112
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(290)
+nop/2
+l1bmm@0 $ls20v $lb116
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(300)
+nop/2
+l1bmm@0 $ls20v $lb120
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(310)
+nop/2
+l1bmm@0 $ls20v $lb124
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(320)
+nop/2
+l1bmm@0 $ls20v $lb128
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(330)
+nop/2
+l1bmm@0 $ls20v $lb132
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(340)
+nop/2
+l1bmm@0 $ls20v $lb136
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(350)
+nop/2
+l1bmm@0 $ls20v $lb140
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(360)
+nop/2
+l1bmm@0 $ls20v $lb144
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(370)
+nop/2
+l1bmm@0 $ls20v $lb148
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(380)
+nop/2
+l1bmm@0 $ls20v $lb152
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(390)
+nop/2
+l1bmm@0 $ls20v $lb156
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(400)
+nop/2
+l1bmm@0 $ls20v $lb160
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(410)
+nop/2
+l1bmm@0 $ls20v $lb164
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(420)
+nop/2
+l1bmm@0 $ls20v $lb168
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(430)
+nop/2
+l1bmm@0 $ls20v $lb172
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(440)
+nop/2
+l1bmm@0 $ls20v $lb176
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(450)
+nop/2
+l1bmm@0 $ls20v $lb180
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(460)
+nop/2
+l1bmm@0 $ls20v $lb184
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(470)
+nop/2
+l1bmm@0 $ls20v $lb188
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(480)
+nop/2
+l1bmm@0 $ls20v $lb192
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(490)
+nop/2
+l1bmm@0 $ls20v $lb196
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(500)
+nop/2
+l1bmm@0 $ls20v $lb200
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(510)
+nop/2
+l1bmm@0 $ls20v $lb204
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(520)
+nop/2
+l1bmm@0 $ls20v $lb208
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(530)
+nop/2
+l1bmm@0 $ls20v $lb212
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(540)
+nop/2
+l1bmm@0 $ls20v $lb216
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(550)
+nop/2
+l1bmm@0 $ls20v $lb220
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(560)
+nop/2
+l1bmm@0 $ls20v $lb224
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(570)
+nop/2
+l1bmm@0 $ls20v $lb228
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(580)
+nop/2
+l1bmm@0 $ls20v $lb232
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(590)
+nop/2
+l1bmm@0 $ls20v $lb236
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(600)
+nop/2
+l1bmm@0 $ls20v $lb240
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(610)
+nop/2
+l1bmm@0 $ls20v $lb244
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(620)
+nop/2
+l1bmm@0 $ls20v $lb248
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(630)
+nop/2
+l1bmm@0 $ls20v $lb252
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(640)
+nop/2
+l1bmm@0 $ls20v $lb256
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(650)
+nop/2
+l1bmm@0 $ls20v $lb260
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(660)
+nop/2
+l1bmm@0 $ls20v $lb264
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(670)
+nop/2
+l1bmm@0 $ls20v $lb268
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(680)
+nop/2
+l1bmm@0 $ls20v $lb272
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(690)
+nop/2
+l1bmm@0 $ls20v $lb276
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(1)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(1)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(2)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(2)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(3)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(3)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(4)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(4)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(5)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(5)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(6)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(6)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(7)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(7)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(8)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(8)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $lr0v $lm0v $lr8v
+nop/2
+fvfma $ls0v $lm16v $lr8v $ls8v #x(9)
+nop/2
+nop/2
+fvpassa $ls8v $lr16v
+nop/2
+fvadd $ls0v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr0v $lr8v #v(9)
+nop/2
+nop/2
+fvpassa $lr16v $ls8v
+nop/2
+fvmul $lr8v $lm0v $lr0v
+nop/2
+fvfma $ls8v $lm16v $lr0v $ls0v #x(10)
+nop/2
+nop/2
+fvpassa $ls0v $lr16v
+nop/2
+fvadd $ls8v $lr16v $ls16v
+nop/2
+fvfma $ls16v -$lm8v $lr8v $lr0v #v(10)
+nop/2
+fvpassa $lr16v $ls0v
+nop/2
+nop/2
+fvmul $ls0v $ls0v $ls20v
+nop/2
+fvmul $lr0v $lr0v $lr20v
+nop/2
+fvadd $ls20v $lr20v $ls20v
+nop/2
+fvmul $ls20v $lm32v $ls20v
+nop/2
+fvmul $ls20v $ln0v $ls20v #Etotal(700)
+nop/2
+l1bmm@0 $ls20v $lb280
+
+d getf $lb0n0c0b0 320
+

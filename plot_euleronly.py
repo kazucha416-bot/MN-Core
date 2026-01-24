@@ -1,3 +1,4 @@
+# MN-CoreにおけるEuler法のみによるエネルギー保存のプロット
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -48,7 +49,7 @@ for config in files_config:
                  label=label_name, 
                  color=config['color'], 
                  linestyle=config['style'], 
-                 linewidth=3.0, 
+                 linewidth=2.5, 
                  alpha=0.8)
                  
         print(f"'{filename}' をプロットしました。")
@@ -60,17 +61,16 @@ for config in files_config:
 
 # --- グラフの体裁 ---
 
-ax.set_xlabel('Time (s)', fontsize=28)
-ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=28)
+ax.set_xlabel('Time [s]', fontsize=16)
+ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
 
 # 目盛りの数字
-ax.tick_params(axis='both', labelsize=22)
-
+ax.tick_params(axis='both', labelsize=16)
 # グリッド
 ax.grid(True, which='both', linestyle='--', alpha=0.7)
 
 # 凡例 (枠なし)
-ax.legend(fontsize=18, loc='best', frameon=False)
+ax.legend(fontsize=16, loc='best', frameon=False)
 
 # --- 保存 ---
 # PDF形式で指定のパスに保存

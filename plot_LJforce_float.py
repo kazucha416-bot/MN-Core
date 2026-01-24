@@ -70,17 +70,17 @@ if not df.empty:
     # --- プロット設定 ---
     plt.figure(figsize=(10, 8))
     
-    plt.scatter(x_data, y_data, s=40, marker='o', c='blue', edgecolors='none')
+    plt.scatter(x_data, y_data, s=100, marker='o', c='red', edgecolors='none')
     
     # 画角設定 (中央に寄せるための広角設定)
-    plt.xlim(1e-5, 1e10)
-    plt.ylim(1e-11, 1e-3)
+    plt.xlim(1e-3, 1e7)
+    plt.ylim(1e-8, 1e-5)
 
     plt.xscale('log')
     plt.yscale('log')
     
-    plt.xlabel(r'Absolute force of CPU $|F_{\mathrm{CPU}}|$', fontsize=16)
-    plt.ylabel(r'Relative error $|F_{\mathrm{MN}} - F_{\mathrm{CPU}}| / |F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.xlabel(r'$|F_{\mathrm{CPU}}|$', fontsize=16)
+    plt.ylabel(r'$\delta$', fontsize=16)
     
     # ★変更点: タイトル削除
     # plt.title('MN-Core Accuracy', fontsize=16)

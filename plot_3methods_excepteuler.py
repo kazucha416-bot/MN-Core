@@ -31,7 +31,7 @@ fig = plt.figure(figsize=(10, 6))
 
 # ★修正1: 描画領域の設定 [left, bottom, width, height]
 # 軸ラベルが大きいので少し余白を調整しました (0.13 -> 0.15)
-ax = fig.add_axes([0.15, 0.15, 0.80, 0.75]) 
+ax = fig.add_axes([0.13, 0.13, 0.86, 0.86]) 
 
 for config in files_config:
     filename = config['file']
@@ -51,7 +51,7 @@ for config in files_config:
                  label=label_name, 
                  color=config['color'], 
                  linestyle=config['style'], 
-                 linewidth=3.0, 
+                 linewidth=2.5, 
                  alpha=0.8)
                  
         print(f"'{filename}' をプロットしました。")
@@ -64,17 +64,16 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 # ★修正2: 文字サイズ設定
-ax.set_xlabel('Time (s)', fontsize=26)
-ax.set_ylabel('$\mathrm{E}_{\mathrm{total}}$', fontsize=26)
+ax.set_xlabel('Time [s]', fontsize=16)
+ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
 
 # 目盛りの数字
-ax.tick_params(axis='both', labelsize=20)
-
+ax.tick_params(axis='both', labelsize=16)
 # グリッド
 ax.grid(True, which='both', linestyle='--', alpha=0.7)
 
 # ★修正3: 凡例 (枠なし, RK系と比較するための配置)
-ax.legend(fontsize=18, loc='best', frameon=False)
+ax.legend(fontsize=16, loc='best', frameon=False)
 
 # --- 保存 ---
 # PDF形式で指定のパスに保存
