@@ -1,4 +1,4 @@
-# MN-CoreにおけるEuler法のみによるエネルギー保存のプロット
+# MN-Coreにおける1次元ばね問題のEuler法のみによるエネルギー保存のプロット
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -62,7 +62,7 @@ for config in files_config:
 # --- グラフの体裁 ---
 
 ax.set_xlabel('Time [s]', fontsize=16)
-ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
+ax.set_ylabel(r'$E_{\mathrm{total}}$ [-]', fontsize=16)
 
 # 目盛りの数字
 ax.tick_params(axis='both', labelsize=16)

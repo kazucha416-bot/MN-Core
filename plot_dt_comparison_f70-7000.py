@@ -65,7 +65,7 @@ for config in files_config:
 
 # ★修正2: 文字サイズを超特大に
 ax.set_xlabel('Time [s]', fontsize=16)
-ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
+ax.set_ylabel(r'$E_{\mathrm{total}}$ [-]', fontsize=16)
 
 # 目盛りの数字
 ax.tick_params(axis='both', labelsize=16)

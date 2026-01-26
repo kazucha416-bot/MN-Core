@@ -1,3 +1,5 @@
+# MN-CoreのLJフォースの誤差の散布図を作成する（単精度版）
+
 import os
 import re
 import struct

@@ -52,7 +52,7 @@ def plot_comparison_separate():
                  linestyle='--', linewidth=2.5, alpha=0.9)
         
         # ラベル設定
-        plt.xlabel('Time [s]', fontsize=label_fontsize)
+        plt.xlabel('Time [-]', fontsize=label_fontsize)
         plt.ylabel(ylabel, fontsize=label_fontsize)
         
         # 軸の数字（目盛り）の設定
@@ -73,17 +73,17 @@ def plot_comparison_separate():
     # 1. 全エネルギー
     save_single_plot(cpu_df['Time'], cpu_df['Total'], 'CPU', 'black',
                      mn_df['Time'], mn_df['Total'], 'MN-Core', 'red',
-                     r'$E_{\mathrm{total}}$', 'TotalEnergy_split.pdf', legend_fontsize)
+                     r'$E_{\mathrm{total}}$ [-]', 'TotalEnergy_split.pdf', legend_fontsize)
 
     # 2. ポテンシャルエネルギー
     save_single_plot(cpu_df['Time'], cpu_df['Potential'], 'CPU', 'blue',
                      mn_df['Time'], mn_df['Potential'], 'MN-Core', 'orange',
-                     r'$E_{\mathrm{potential}}$', 'PotentialEnergy_split.pdf', legend_fontsize)
+                     r'$E_{\mathrm{potential}}$ [-]', 'PotentialEnergy_split.pdf', legend_fontsize)
 
     # 3. 運動エネルギー
     save_single_plot(cpu_df['Time'], cpu_df['Kinetic'], 'CPU', 'green',
                      mn_df['Time'], mn_df['Kinetic'], 'MN-Core', 'purple',
-                     r'$E_{\mathrm{kinetic}}$', 'KineticEnergy_split.pdf', legend_fontsize)
+                     r'$E_{\mathrm{kinetic}}$ [-]', 'KineticEnergy_split.pdf', legend_fontsize)
 
 if __name__ == "__main__":
     plot_comparison_separate()

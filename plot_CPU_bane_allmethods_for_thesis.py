@@ -120,8 +120,8 @@ def main():
     # 共通設定関数 (True Value削除版)
     def setup_plot():
         plt.figure(figsize=(8, 5))
-        plt.xlabel('Time [s]', fontsize=16)
-        plt.ylabel(r'$E_{\mathrm{total}}$', fontsize=16)
+        plt.xlabel('Time [-]', fontsize=16)
+        plt.ylabel(r'$E_{\mathrm{total}}$ [-]', fontsize=16)
         plt.tick_params(labelsize=16)
         plt.grid(True, linestyle=':', alpha=0.6)
         # plt.axhline(...) を削除しました

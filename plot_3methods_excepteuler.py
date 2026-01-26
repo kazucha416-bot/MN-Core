@@ -1,3 +1,4 @@
+# MN-Coreにおける1次元ばね問題のVV法、RK2法、RK4法によるエネルギー保存のプロット
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -65,7 +66,7 @@ for config in files_config:
 
 # ★修正2: 文字サイズ設定
 ax.set_xlabel('Time [s]', fontsize=16)
-ax.set_ylabel('$E_{\mathrm{total}}$', fontsize=16)
+ax.set_ylabel(r'$E_{\mathrm{total}}$ [-]', fontsize=16)
 
 # 目盛りの数字
 ax.tick_params(axis='both', labelsize=16)

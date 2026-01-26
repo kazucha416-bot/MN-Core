@@ -1,3 +1,4 @@
+# MN-CoreのLJフォースの誤差の散布図を作成する（倍精度版）
 import re
 import struct
 import numpy as np

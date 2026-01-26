@@ -1,3 +1,4 @@
+# 1次元LJばね問題におけるMN-Core2とCPU（単精度版）のエネルギー比較グラフを作成するスクリプト
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -132,8 +133,8 @@ def main():
 
     # ラベル設定
     # ★修正2: \m 警告対策 -> raw string (r'') を使用
-    ax.set_xlabel('Time [s]', fontsize=16)
-    ax.set_ylabel(r'$E_{\mathrm{total}}$', fontsize=16)
+    ax.set_xlabel('Time [-]', fontsize=16)
+    ax.set_ylabel(r'$E_{\mathrm{total}}$ [-]', fontsize=16)
     
     ax.legend(fontsize=16, loc='upper right', frameon=False)
     ax.grid(True, linestyle=':', alpha=0.6)
