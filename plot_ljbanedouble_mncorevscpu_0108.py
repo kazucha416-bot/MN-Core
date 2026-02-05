@@ -30,11 +30,11 @@ def main():
     # 設定エリア (倍精度用)
     # ==========================================
     mn_file = '1227baneljdouble_result.txt'
-    cpu_file = 'lj_oscillator_1D_double.txt'
+    cpu_file = 'banelj1d_cpu_double.txt'
     
     # 保存先ディレクトリ（卒論用フォルダ）
     save_dir = r'/home/kazuki/thesis/images'
-    output_filename = 'MNCore2_vs_CPU_LJ_Energy_Double_Analysis.pdf'
+    output_filename = 'MNCore2_vs_CPU_LJ_Energy_Double_NEW.pdf'
     
     # フルパスの生成
     output_path = os.path.join(save_dir, output_filename)
@@ -128,9 +128,9 @@ def main():
     ax.plot(cpu_time, cpu_energies, label='CPU (Double)', 
              color='black', linewidth=2.0, alpha=0.8)
 
-    # MN-Core - 赤破線
+    # MN-Core - 倍精度は青で統一
     ax.plot(cpu_time, mn_energies, label='MN-Core 2 (Double)', 
-             color='red', linestyle='--', linewidth=2.0, alpha=0.9)
+             color='blue', linestyle='--', linewidth=2.0, alpha=0.9)
 
     # ラベル設定 (Raw Stringで警告回避)
     ax.set_xlabel('Time [-]', fontsize=16)

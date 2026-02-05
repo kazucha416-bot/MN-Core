@@ -39,7 +39,8 @@ int main(void) {
 
     // --- 3. 出力ファイルの準備 ---
     FILE *fp;
-    fp = fopen("lj_oscillator_1D_float.txt", "w"); // ファイル名を変更
+    const char *filename = "lj_oscillator_1D_float.txt"; // ファイル名を定数化
+    fp = fopen(filename, "w"); 
     if (fp == NULL) {
         printf("ファイルを開けません。\n");
         return 1;
@@ -56,6 +57,13 @@ int main(void) {
 
     // --- 5. 時間発展メインループ (ベレの速度形式) ---
     for (int k = 0; k < time_steps; k++) {
+         // --- 5e. エネルギーの計算とファイルへの出力 ---
+        pe = ce12 * r12i - ce06 * r06i; 
+        ke = 0.5f * mass * (v * v);     
+        total_e = pe + ke;
+        
+        // ★ここを変更: %f -> %.9g (単精度の有効数字限界まで出力)
+        fprintf(fp, "%.9g\t%.9g\t%.9g\t%.9g\t%.9g\n", (float)k * dt, pos, pe, ke, total_e);
         
         // --- 5a. 位置の更新 (Verlet Step 1) ---
         pos = pos + dt * v + 0.5f * dt * dt * (f1 / mass);
@@ -63,7 +71,7 @@ int main(void) {
         // --- 5b. 新しい位置での力 (force2) を計算 (Verlet Step 2) ---
         r2 = pos * pos; // 1Dの距離の2乗
         r2i = 1.0f / r2;
-        r06i = powf(r2i, 3); // powf に変更
+        r06i = powf(r2i, 3);
         r12i = r06i * r06i;
         fc = (cf12 * r12i - cf06 * r06i) * r2i;
         f2 = fc * pos;
@@ -73,19 +81,11 @@ int main(void) {
 
         // --- 5d. 次のステップの準備 ---
         f1 = f2;
-
-        // --- 5e. エネルギーの計算とファイルへの出力 ---
-        pe = ce12 * r12i - ce06 * r06i; // ポテンシャルエネルギー
-        ke = 0.5f * mass * (v * v);     // 1Dの運動エネルギー
-        total_e = pe + ke;
-        
-        // fprintfの%fはfloat型もdouble型も扱えます
-        fprintf(fp, "%f\t%f\t%f\t%f\t%f\n", (k * dt), pos, pe, ke, total_e);
     }
 
     // --- 6. クローズ処理 ---
     fclose(fp);
-    printf("シミュレーション完了。 'lj_oscillator_1D_float.txt' に結果を出力しました。\n");
+    printf("シミュレーション完了。 '%s' に結果を出力しました。(有効数字9桁)\n", filename);
 
     return 0;
 }

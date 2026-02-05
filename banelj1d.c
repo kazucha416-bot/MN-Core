@@ -82,7 +82,7 @@ int main(void) {
 
     // --- 6. クローズ処理 ---
     fclose(fp);
-    printf("シミュレーション完了。 'lj_oscillator_1D.txt' に結果を出力しました。\n");
+    printf("シミュレーション完了。 'lj_oscillator_1D_double.txt' に結果を出力しました。\n");
 
     return 0;
 }

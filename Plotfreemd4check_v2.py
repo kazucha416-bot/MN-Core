@@ -1,9 +1,10 @@
+# MN-Coreの結果を１０進数に変更し，体裁を整えたテキストファイルを出力するスクリプト
 import struct
 import os
 
 def main():
     # --- ユーザー入力 ---
-    print("--- MN-Core Result Parser ---")
+    print("--- MN-Core Result Parser (9-digit Precision) ---")
     try:
         interval_input = input("出力間隔（何ステップに1回出力しましたか？）を入力してください (例: 50): ")
         output_interval = int(interval_input)
@@ -12,10 +13,10 @@ def main():
         return
 
     # --- 設定 ---
-    input_filename = '0113mdfree4mncore3000result.txt'
-    output_filename = '0113mdfree4_mncore_3000results.txt'
+    input_filename = '0205_freemd4_v=0.5~1.0.txt'
+    output_filename = '0205_freemd4_v=0.5~1.0_decimal.txt'
     dt = 0.001
-    
+    1
     # 1出力フレームあたりのデータ行数構成
     # KE: 4粒子分 = 4 lines
     # PE: 4x4行列 = 16 lines (うち最後4つはinf)
@@ -54,8 +55,6 @@ def main():
         print("⚠️ 警告: データ行数が想定（20の倍数）と一致しません。余分なデータは無視されます。")
 
     # データ分割位置
-    # ファイルの前半: 全フレームのKE (Frames * 4)
-    # ファイルの後半: 全フレームのPE (Frames * 16)
     split_index = n_frames * 4
     
     ke_hex_data = lines[:split_index]
@@ -67,42 +66,41 @@ def main():
     pe_vals = [hex_to_float(h) for h in pe_hex_data]
 
     # --- 計算と出力 ---
-    # ヘッダー作成
-    header = f"{'Time [s]':<10} {'Potential':<15} {'Kinetic':<15} {'Total':<15}"
+    # ヘッダー作成 (桁数が増えるので幅を少し広げました: 15 -> 20)
+    header = f"{'Time [s]':<12} {'Potential':<20} {'Kinetic':<20} {'Total':<20}"
     
     results = []
     
     print("Processing data...")
     for i in range(n_frames):
-        # 1. 時間 (フレーム番号 * 出力間隔 * dt)
+        # 1. 時間
         t = i * output_interval * dt
         
-        # 2. 運動エネルギー (4つの合計)
+        # 2. 運動エネルギー
         ke_block = ke_vals[i*4 : (i+1)*4]
         ke_sum = sum(ke_block)
         
-        # 3. ポテンシャルエネルギー (16個のブロックのうち、先頭12個を合計して半分にする)
+        # 3. ポテンシャルエネルギー
         pe_block_full = pe_vals[i*16 : (i+1)*16]
-        # 最後4つのinf(7f800000)を無視するため先頭12個を取得
         pe_valid = pe_block_full[:12] 
         pe_sum = sum(pe_valid) / 2.0
         
         # 4. 全エネルギー
         total_energy = ke_sum + pe_sum
         
-        # 文字列整形
-        line_str = f"{t:<10.3f} {pe_sum:<15.6f} {ke_sum:<15.6f} {total_energy:<15.6f}"
+        # ★ここを変更: 有効数字9桁 (.9g) にし、幅を20文字確保
+        # Timeも .9g にして精度を保ちます
+        line_str = f"{t:<12.9g} {pe_sum:<20.9g} {ke_sum:<20.9g} {total_energy:<20.9g}"
         results.append(line_str)
-        # ターミナル出力は削除しました
 
     # --- ファイル保存 ---
     with open(output_filename, 'w') as f:
         f.write(header + "\n")
-        f.write("-" * 60 + "\n")
+        f.write("-" * 75 + "\n") # 区切り線も少し長く
         for line in results:
             f.write(line + "\n")
             
-    print(f"完了: 結果を '{output_filename}' に保存しました。")
+    print(f"完了: 結果を '{output_filename}' に保存しました。(有効数字9桁)")
 
 if __name__ == "__main__":
     main()

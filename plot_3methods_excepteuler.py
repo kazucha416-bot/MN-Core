@@ -6,9 +6,9 @@ import os  # パス操作用
 
 # --- 設定 ---
 files_config = [
-    {"file": "resultVV70.txt",     "label": "VV",  "color": "tab:green",  "style": "-"},
-    {"file": "result_RK270.txt",   "label": "RK2", "color": "tab:orange", "style": "-."},
-    {"file": "result_RK470.txt",   "label": "RK4", "color": "tab:red",    "style": ":"},
+    {"file": "resultVV70.txt",     "label": "VV",  "color": "black",  "style": "-"},
+    {"file": "result_RK270.txt",   "label": "RK2", "color": "red", "style": "-."},
+    {"file": "result_RK470.txt",   "label": "RK4", "color": "darkblue",    "style": ":"},
 ]
 
 # 保存先の設定
@@ -32,7 +32,7 @@ fig = plt.figure(figsize=(10, 6))
 
 # ★修正1: 描画領域の設定 [left, bottom, width, height]
 # 軸ラベルが大きいので少し余白を調整しました (0.13 -> 0.15)
-ax = fig.add_axes([0.13, 0.13, 0.86, 0.86]) 
+ax = fig.add_axes([0.15, 0.15, 0.80, 0.80]) 
 
 for config in files_config:
     filename = config['file']

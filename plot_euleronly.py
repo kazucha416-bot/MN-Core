@@ -6,7 +6,7 @@ import os  # パス操作用に追加
 
 # --- 設定 ---
 files_config = [
-    {"file": "eulerf70result.txt", "label": "Euler explicit", "color": "tab:blue",  "style": "-"},
+    {"file": "eulerf70result.txt", "label": "Euler explicit", "color": "darkblue",  "style": "-"},
 ]
 
 # 保存先の設定
