@@ -11,12 +11,10 @@ def main():
     except ValueError:
         print("エラー: 整数を入力してください。")
         return
-
     # --- 設定 ---
-    input_filename = '0205_freemd4_v=0.5~1.0.txt'
-    output_filename = '0205_freemd4_v=0.5~1.0_decimal.txt'
+    input_filename = '0216_freemd4_hex.txt'
+    output_filename = '0216_freemd4_decimal.txt'
     dt = 0.001
-    1
     # 1出力フレームあたりのデータ行数構成
     # KE: 4粒子分 = 4 lines
     # PE: 4x4行列 = 16 lines (うち最後4つはinf)
